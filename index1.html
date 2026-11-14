@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Iffah ✨ The Cutest Soul in the Universe</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Pacifico for cute script headers, Quicksand & Nunito for soft rounded text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,600&family=Pacifico&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        script: ['Pacifico', 'cursive'],
+                        display: ['Quicksand', 'sans-serif'],
+                        body: ['Nunito', 'sans-serif'],
+                    },
+                    colors: {
+                        cream: '#FFF9F5',
+                        blush: '#FFE4EC',
+                        berry: '#FF6B9D',
+                        berryDark: '#E0487B',
+                        lavender: '#EDE4FF',
+                        lavenderDeep: '#9B7EDE',
+                        cocoa: '#4A2C2A',
+                        cocoaLight: '#6E4542',
+                        fudge: '#2D1816',
+                        caramel: '#F5B971',
+                        vanilla: '#FFF3D6',
+                    },
+                    boxShadow: {
+                        'cute': '0 12px 30px -6px rgba(255, 107, 157, 0.22)',
+                        'cute-lg': '0 20px 40px -10px rgba(255, 107, 157, 0.30)',
+                        'cocoa': '0 14px 32px -8px rgba(74, 44, 42, 0.25)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #FFF9F5;
+            color: #4A2C2A;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .font-display {
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        .font-script {
+            font-family: 'Pacifico', cursive;
+        }
+
+        /* Soft pastel gradient mesh background */
+        .pastel-bg {
+            background: 
+                radial-gradient(circle at 12% 15%, rgba(255, 214, 231, 0.75) 0%, transparent 42%),
+                radial-gradient(circle at 88% 20%, rgba(237, 228, 255, 0.8) 0%, transparent 45%),
+                radial-gradient(circle at 50% 55%, rgba(255, 243, 214, 0.7) 0%, transparent 50%),
+                radial-gradient(circle at 85% 85%, rgba(255, 228, 236, 0.8) 0%, transparent 45%),
+                #FFF9F5;
+        }
+
+        /* Floating gentle animations */
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(4deg); }
+        }
+
+        @keyframes floatReverse {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(10px) rotate(-4deg); }
+        }
+
+        @keyframes pulseHeart {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.14); }
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+
+        @keyframes drip {
+            0%, 100% { transform: scaleY(1); }
+            50% { transform: scaleY(1.18); }
+        }
+
+        .animate-float-slow {
+            animation: floatSlow 5s ease-in-out infinite;
+        }
+
+        .animate-float-reverse {
+            animation: floatReverse 6s ease-in-out infinite;
+        }
+
+        .animate-pulse-heart {
+            animation: pulseHeart 1.8s ease-in-out infinite;
+        }
+
+        .animate-drip {
+            transform-origin: top center;
+            animation: drip 3.2s ease-in-out infinite;
+        }
+
+        .shimmer-text {
+            background: linear-gradient(90deg, #E0487B 0%, #FF8FB3 30%, #9B7EDE 60%, #E0487B 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 5s linear infinite;
+        }
+
+        /* 3D Flip Card Styles */
+        .perspective-1000 {
+            perspective: 1000px;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transform-style: preserve-3d;
+        }
+
+        .flip-card.flipped .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 1.75rem;
+        }
+
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+
+        /* Particle burst styling */
+        .burst-particle {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            user-select: none;
+            animation: particleFly 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes particleFly {
+            0% {
+                opacity: 1;
+                transform: translate(0, 0) scale(0.6) rotate(0deg);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(var(--tx), var(--ty)) scale(1.4) rotate(var(--rot));
+            }
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FFF3F7;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #FFB3CC;
+            border-radius: 9999px;
+            border: 2px solid #FFF3F7;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #FF6B9D;
+        }
+
+        /* Glass pastel card */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 2px solid rgba(255, 214, 231, 0.85);
+        }
+    </style>
+</head>
+<body class="pastel-bg selection:bg-berry selection:text-white">
+
+    <!-- Background Ambient Floating Sparkles & Hearts Canvas -->
+    <div id="ambient-layer" class="fixed inset-0 pointer-events-none overflow-hidden z-0"></div>
+
+    <!-- Sticky Cute Top Navigation Bar -->
+    <header class="sticky top-3 z-40 px-4 max-w-6xl mx-auto">
+        <nav class="glass-card rounded-full px-4 py-2.5 shadow-cute flex items-center justify-between gap-2 overflow-x-auto no-scrollbar">
+            <a href="#top" class="flex items-center gap-2 shrink-0 pl-1 group">
+                <span class="text-2xl animate-pulse-heart">🧁</span>
+                <span class="font-script text-xl text-berryDark group-hover:text-berry transition">Iffah's World</span>
+            </a>
+
+            <div class="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-bold text-cocoa shrink-0">
+                <a href="#cuteness-meter" class="px-3 py-1.5 rounded-full bg-blush/70 hover:bg-berry hover:text-white transition">💖 Cuteness Meter</a>
+                <a href="#lava-bakery" class="px-3 py-1.5 rounded-full bg-vanilla hover:bg-cocoa hover:text-white transition">🍫 Lava Cake Bakery</a>
+                <a href="#love-letters" class="px-3 py-1.5 rounded-full bg-lavender/80 hover:bg-lavenderDeep hover:text-white transition">💌 Story Letters</a>
+                <a href="#hugs-station" class="px-3 py-1.5 rounded-full bg-blush/70 hover:bg-berry hover:text-white transition">🧸 Send Hugs</a>
+                <a href="#open-when" class="px-3 py-1.5 rounded-full bg-vanilla hover:bg-berry hover:text-white transition">✨ Flip Cards</a>
+                <a href="#scrapbook" class="px-3 py-1.5 rounded-full bg-lavender/80 hover:bg-lavenderDeep hover:text-white transition">📸 Scrapbook</a>
+            </div>
+        </nav>
+    </header>
+
+    <main id="top" class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-8 pb-24 space-y-20">
+
+        <!-- =========================================================
+             1. HERO SECTION: GRAND WELCOME BANNER FOR IFFAH
+        ========================================================== -->
+        <section class="relative rounded-[2.5rem] glass-card p-7 sm:p-12 md:p-16 shadow-cute-lg overflow-hidden text-center">
+            <!-- Decorative corner stickers -->
+            <div class="hidden sm:flex absolute top-6 left-8 text-4xl animate-float-slow select-none">🌸</div>
+            <div class="hidden sm:flex absolute top-8 right-10 text-4xl animate-float-reverse select-none">🍰</div>
+            <div class="hidden sm:flex absolute bottom-8 left-12 text-4xl animate-float-reverse select-none">🎀</div>
+            <div class="hidden sm:flex absolute bottom-6 right-10 text-4xl animate-float-slow select-none">✨</div>
+
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blush text-berryDark font-extrabold text-xs sm:text-sm tracking-wide uppercase mb-5 shadow-sm">
+                <span>🍓 Official Appreciation Shrine</span>
+                <span>•</span>
+                <span>1000% Certified Adorable</span>
+            </div>
+
+            <h1 class="font-script text-4xl sm:text-6xl md:text-7xl leading-tight mb-4 shimmer-text drop-shadow-sm">
+                Iffah, You Are So Unbelievably Cute!
+            </h1>
+
+            <p class="font-display text-lg sm:text-2xl font-bold text-cocoaLight max-w-3xl mx-auto mb-6">
+                Sweeter than warm molten chocolate lava cake, softer than a pastel cloud, and brighter than a sky full of shooting stars. ✨
+            </p>
+
+            <!-- Rich multi-sentence intro paragraph -->
+            <div class="max-w-3xl mx-auto bg-white/80 rounded-3xl p-6 sm:p-8 border-2 border-blush text-left sm:text-center space-y-4 shadow-sm mb-8">
+                <p class="text-base sm:text-lg leading-relaxed text-cocoa font-medium">
+                    Welcome to a whole corner of the internet built exclusively to celebrate <strong class="text-berryDark font-extrabold">Iffah</strong>! Honestly, it is almost unfair how effortlessly cute you are. From the way your smile instantly lights up an entire room to the cozy, gentle energy you bring wherever you go, you make ordinary days feel like a celebration.
+                </p>
+                <p class="text-base sm:text-lg leading-relaxed text-cocoa font-medium">
+                    Whether you are laughing at something silly, getting excited over your absolute favorite treat—rich, gooey <strong class="text-cocoa font-extrabold underline decoration-caramel decoration-4">molten chocolate lava cake</strong>—or simply being your wonderful self, you deserve to be reminded every single second just how cherished, adorable, and special you truly are.
+                </p>
+            </div>
+
+            <!-- Quick-Jump Action Pills -->
+            <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+                <button onclick="triggerHeroCelebration(event)" class="px-7 py-4 rounded-full bg-gradient-to-r from-berry to-berryDark text-white font-extrabold text-base sm:text-lg shadow-cute hover:scale-105 active:scale-95 transition cursor-pointer flex items-center gap-2">
+                    <span>💖 Shower Iffah With Sparkles</span>
+                </button>
+                <a href="#lava-bakery" class="px-7 py-4 rounded-full bg-cocoa text-cream font-extrabold text-base sm:text-lg shadow-cocoa hover:bg-fudge hover:scale-105 active:scale-95 transition flex items-center gap-2">
+                    <span>🍫 Bake Her Fav Lava Cake</span>
+                </a>
+                <a href="#love-letters" class="px-7 py-4 rounded-full bg-lavender text-cocoa font-extrabold text-base sm:text-lg border-2 border-lavenderDeep/30 hover:scale-105 active:scale-95 transition flex items-center gap-2">
+                    <span>📖 Read Sweet Paragraphs</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             2. CUTENESS OVERLOAD METER & COMPLIMENT DISPENSER
+        ========================================================== -->
+        <section id="cuteness-meter" class="scroll-mt-24 grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+            
+            <!-- Left Panel: Cuteness Overload Meter -->
+            <div class="lg:col-span-6 glass-card rounded-[2.25rem] p-7 sm:p-9 shadow-cute flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between gap-2 mb-3">
+                        <span class="px-3.5 py-1 rounded-full bg-blush text-berryDark text-xs font-extrabold uppercase tracking-wider">Scientific Measurement</span>
+                        <span id="meter-badge" class="px-3.5 py-1 rounded-full bg-vanilla text-cocoa text-xs font-extrabold">Level: Super Cute 🌸</span>
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-cocoa mb-2">
+                        Iffah's Cuteness Overload Meter 🌡️💖
+                    </h2>
+                    <p class="text-cocoaLight text-sm sm:text-base mb-6">
+                        Warning: Our sensors were not designed to handle Iffah's level of adorableness. Keep tapping the button below to test the limits!
+                    </p>
+
+                    <!-- Visual Meter Bar -->
+                    <div class="bg-blush/60 rounded-3xl p-5 border-2 border-pink-200 mb-6">
+                        <div class="flex justify-between items-end mb-2">
+                            <span class="font-bold text-sm text-cocoaLight">Current Reading:</span>
+                            <span id="cuteness-percent" class="font-script text-3xl sm:text-4xl text-berryDark">100%</span>
+                        </div>
+                        <div class="w-full h-7 bg-white rounded-full overflow-hidden p-1 border border-pink-200 shadow-inner">
+                            <div id="cuteness-bar" class="h-full rounded-full bg-gradient-to-r from-pink-400 via-berry to-purple-500 transition-all duration-500 flex items-center justify-end pr-2 text-xs text-white font-bold" style="width: 45%;">
+                                ✨
+                            </div>
+                        </div>
+                        <p id="meter-status-text" class="mt-3 text-sm font-bold text-cocoa text-center bg-white/80 py-2.5 px-4 rounded-2xl">
+                            "Baseline reading already exceeds normal human cuteness standards!"
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <button id="boost-cuteness-btn" onclick="boostCuteness(event)" class="flex-1 py-4 px-6 rounded-2xl bg-gradient-to-r from-berry to-pink-500 text-white font-extrabold text-base sm:text-lg shadow-cute hover:brightness-105 active:scale-95 transition cursor-pointer">
+                        ⚡ Measure More Cuteness!
+                    </button>
+                    <button onclick="resetCuteness()" class="py-4 px-5 rounded-2xl bg-blush/80 text-berryDark font-bold text-sm hover:bg-blush transition cursor-pointer">
+                        Reset 🔄
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Panel: Interactive Compliment & Sweet Note Machine -->
+            <div class="lg:col-span-6 glass-card rounded-[2.25rem] p-7 sm:p-9 shadow-cute flex flex-col justify-between bg-gradient-to-br from-white/90 to-lavender/40">
+                <div>
+                    <div class="flex items-center justify-between gap-2 mb-3">
+                        <span class="px-3.5 py-1 rounded-full bg-lavender text-lavenderDeep text-xs font-extrabold uppercase tracking-wider">Sweet Note Dispenser</span>
+                        <span id="compliment-counter" class="text-xs font-bold text-cocoaLight">Note #1 of 18</span>
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-cocoa mb-2">
+                        Why Iffah Is Pure Magic ✨💌
+                    </h2>
+                    <p class="text-cocoaLight text-sm sm:text-base mb-6">
+                        Press the magic gumball button to pull out another reason why everyone adores you so much!
+                    </p>
+
+                    <!-- Compliment Card Display -->
+                    <div id="compliment-card" class="relative bg-white rounded-3xl p-6 sm:p-7 border-2 border-lavenderDeep/30 shadow-sm min-h-[190px] flex flex-col justify-center items-center text-center transition-all duration-300">
+                        <div id="compliment-emoji" class="text-4xl mb-3 animate-float-slow">🌷</div>
+                        <p id="compliment-text" class="text-base sm:text-lg font-bold text-cocoa leading-relaxed">
+                            "Iffah has the kind of smile that makes bad days immediately pack their bags and leave. You are genuinely sunshine in human form!"
+                        </p>
+                        <span id="compliment-tag" class="mt-4 inline-block px-3 py-1 rounded-full bg-blush/70 text-berryDark text-xs font-extrabold">
+                            #EffortlesslyAdorable
+                        </span>
+                    </div>
+                </div>
+
+                <div class="mt-6">
+                    <button onclick="nextCompliment(event)" class="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-lavenderDeep to-purple-500 text-white font-extrabold text-base sm:text-lg shadow-cute hover:brightness-105 active:scale-95 transition cursor-pointer flex items-center justify-center gap-2">
+                        <span>🎲 Dispense Another Cute Truth</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             3. SWEET TREATS & LAVA CAKE INTERACTIVE BAKERY PANEL
+        ========================================================== -->
+        <section id="lava-bakery" class="scroll-mt-24 rounded-[2.5rem] bg-gradient-to-br from-[#FFF3E8] via-[#FFE9DC] to-[#FDE2E4] border-2 border-caramel/50 p-7 sm:p-12 shadow-cocoa">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cocoa text-cream text-xs sm:text-sm font-extrabold uppercase tracking-wider mb-3">
+                    🍫 Iffah's #1 Favorite Dessert • Molten Lava Cake Edition
+                </span>
+                <h2 class="font-script text-3xl sm:text-5xl text-cocoa mb-3">
+                    Iffah's Cozy Molten Lava Cake Bakery
+                </h2>
+                <p class="text-cocoaLight text-base sm:text-lg font-semibold">
+                    Because we all know the fastest way to make Iffah's eyes sparkle is a warm, rich, gooey chocolate lava cake! Customize and bake a fresh batch right here.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <!-- Interactive Lava Cake Builder Visual (Left 5 Cols) -->
+                <div class="lg:col-span-5 bg-white/90 rounded-[2rem] p-6 sm:p-8 border-2 border-caramel/40 shadow-md text-center flex flex-col items-center">
+                    <div class="text-xs font-extrabold uppercase tracking-widest text-cocoaLight mb-2">
+                        Fresh From the Oven • Made For Iffah
+                    </div>
+
+                    <!-- Custom SVG Interactive Lava Cake Illustration -->
+                    <div class="relative w-64 h-56 flex items-center justify-center my-2">
+                        <svg id="lava-cake-svg" viewBox="0 0 260 220" class="w-full h-full drop-shadow-md">
+                            <!-- Dessert Plate -->
+                            <ellipse cx="130" cy="188" rx="112" ry="22" fill="#FFF9F5" stroke="#F5B971" stroke-width="4"/>
+                            <ellipse cx="130" cy="186" rx="86" ry="14" fill="none" stroke="#FFE4EC" stroke-width="2"/>
+
+                            <!-- Chocolate Sauce Puddle (Revealed when baked/poured) -->
+                            <ellipse id="svg-lava-puddle" cx="130" cy="182" rx="68" ry="12" fill="#3B1D1A" class="transition-all duration-700 opacity-30"/>
+
+                            <!-- Main Warm Chocolate Cake Body -->
+                            <path d="M68 108 L58 176 C58 184 202 184 202 176 L192 108 Z" fill="#4A2C2A"/>
+                            <ellipse cx="130" cy="108" rx="62" ry="16" fill="#5E3835"/>
+
+                            <!-- Gooey Molten Chocolate Lava Ooze -->
+                            <g id="svg-molten-ooze" class="transition-all duration-500">
+                                <path d="M88 108 Q96 152 106 144 Q114 136 120 164 Q128 176 136 155 Q144 134 152 152 Q162 162 170 110 Z" fill="#26110F" class="animate-drip"/>
+                                <ellipse cx="130" cy="108" rx="36" ry="9" fill="#26110F"/>
+                            </g>
+
+                            <!-- Vanilla Ice Cream Scoop Topping (Toggleable) -->
+                            <g id="svg-ice-cream" class="transition-all duration-500 opacity-0 scale-75 origin-center">
+                                <circle cx="130" cy="86" r="26" fill="#FFFDF7" stroke="#F3E5AB" stroke-width="2"/>
+                                <path d="M106 94 Q115 104 124 96 Q132 105 140 96 Q148 103 154 93" fill="none" stroke="#FFF3D6" stroke-width="4" stroke-linecap="round"/>
+                            </g>
+
+                            <!-- Fresh Strawberries Topping (Toggleable) -->
+                            <g id="svg-berries" class="transition-all duration-500 opacity-0">
+                                <path d="M92 92 C86 92 84 102 92 110 C100 102 98 92 92 92 Z" fill="#FF4D79"/>
+                                <path d="M88 92 L92 87 L96 92 Z" fill="#4CAF50"/>
+                                <path d="M168 92 C162 92 160 102 168 110 C176 102 174 92 168 92 Z" fill="#FF4D79"/>
+                                <path d="M164 92 L168 87 L172 92 Z" fill="#4CAF50"/>
+                            </g>
+
+                            <!-- Powdered Sugar & Gold Sparkles (Toggleable) -->
+                            <g id="svg-sugar" class="transition-all duration-500 opacity-0">
+                                <circle cx="105" cy="105" r="2" fill="#FFFFFF"/>
+                                <circle cx="118" cy="102" r="2.2" fill="#FFFFFF"/>
+                                <circle cx="144" cy="103" r="2" fill="#FFFFFF"/>
+                                <circle cx="155" cy="107" r="1.8" fill="#FFFFFF"/>
+                                <text x="72" y="75" font-size="16">✨</text>
+                                <text x="172" y="72" font-size="16">💖</text>
+                            </g>
+                        </svg>
+                    </div>
+
+                    <!-- Interactive Topping Buttons -->
+                    <div class="grid grid-cols-2 gap-2.5 w-full mt-2">
+                        <button onclick="toggleCakeTopping('lava', event)" id="btn-lava" class="py-2.5 px-3 rounded-xl bg-cocoa text-cream font-bold text-xs sm:text-sm hover:bg-fudge transition cursor-pointer">
+                            🍫 Extra Molten Lava
+                        </button>
+                        <button onclick="toggleCakeTopping('icecream', event)" id="btn-icecream" class="py-2.5 px-3 rounded-xl bg-vanilla text-cocoa border border-caramel font-bold text-xs sm:text-sm hover:bg-amber-100 transition cursor-pointer">
+                            🍨 Vanilla Ice Cream
+                        </button>
+                        <button onclick="toggleCakeTopping('berries', event)" id="btn-berries" class="py-2.5 px-3 rounded-xl bg-blush text-berryDark font-bold text-xs sm:text-sm hover:bg-pink-200 transition cursor-pointer">
+                            🍓 Sweet Berries
+                        </button>
+                        <button onclick="toggleCakeTopping('sugar', event)" id="btn-sugar" class="py-2.5 px-3 rounded-xl bg-lavender text-lavenderDeep font-bold text-xs sm:text-sm hover:bg-purple-200 transition cursor-pointer">
+                            ✨ Fairy Sugar Dust
+                        </button>
+                    </div>
+
+                    <button onclick="serveCakeToIffah(event)" class="mt-4 w-full py-3.5 px-5 rounded-2xl bg-gradient-to-r from-berry to-berryDark text-white font-extrabold text-sm sm:text-base shadow-cute hover:scale-[1.02] active:scale-95 transition cursor-pointer">
+                        🍽️ Serve Warm Cake to Iffah!
+                    </button>
+                    <p id="cake-feedback" class="mt-3 text-xs sm:text-sm font-bold text-cocoaLight min-h-[20px]">
+                        Tap the toppings to customize Iffah's dream dessert!
+                    </p>
+                </div>
+
+                <!-- Rich Multi-Paragraph Cake & Sweetness Story (Right 7 Cols) -->
+                <div class="lg:col-span-7 space-y-5">
+                    <div class="bg-white/90 rounded-3xl p-6 sm:p-8 border-2 border-caramel/40 shadow-sm space-y-4">
+                        <div class="flex items-center gap-3">
+                            <span class="text-3xl">🌋</span>
+                            <h3 class="text-xl sm:text-2xl font-extrabold text-cocoa">
+                                Why Iffah & Molten Lava Cake Are a Match Made in Heaven
+                            </h3>
+                        </div>
+                        <p class="text-cocoa text-base leading-relaxed">
+                            Think about what makes a <strong class="text-cocoa font-extrabold">molten chocolate lava cake</strong> so unforgettable: on the outside, it looks delicate, warm, and comforting, and the moment you break into it, out flows the richest, sweetest, most heartwarming center imaginable. That is literally <strong class="text-berryDark font-extrabold">Iffah</strong> in dessert form!
+                        </p>
+                        <p class="text-cocoa text-base leading-relaxed">
+                            There is nothing cuter than watching how happy good cake makes you. Knowing that your favorite treat is warm, velvety lava cake just proves that you have immaculate taste—cozy, classic, deeply sweet, and impossible not to love. Honestly, even the best bakery in the world couldn't compete with how sweet your personality is!
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+                            <div class="bg-vanilla/80 rounded-2xl p-3.5 text-center border border-caramel/40">
+                                <div class="text-2xl mb-1">🔥</div>
+                                <div class="font-extrabold text-xs text-cocoa uppercase">Warm Hearted</div>
+                                <div class="text-xs text-cocoaLight mt-0.5">Just like fresh oven-baked cocoa</div>
+                            </div>
+                            <div class="bg-blush/60 rounded-2xl p-3.5 text-center border border-pink-200">
+                                <div class="text-2xl mb-1">🍫</div>
+                                <div class="font-extrabold text-xs text-cocoa uppercase">100% Rich & Sweet</div>
+                                <div class="text-xs text-cocoaLight mt-0.5">Zero bitterness, pure joy</div>
+                            </div>
+                            <div class="bg-lavender/70 rounded-2xl p-3.5 text-center border border-purple-200">
+                                <div class="text-2xl mb-1">👑</div>
+                                <div class="font-extrabold text-xs text-cocoa uppercase">Cake Queen</div>
+                                <div class="text-xs text-cocoaLight mt-0.5">Deserves unlimited slices</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             4. MULTI-PARAGRAPH LOVE & APPRECIATION LETTERS (STORYBOOK)
+        ========================================================== -->
+        <section id="love-letters" class="scroll-mt-24 glass-card rounded-[2.5rem] p-7 sm:p-12 shadow-cute-lg">
+            <div class="text-center max-w-3xl mx-auto mb-8">
+                <span class="px-4 py-1.5 rounded-full bg-blush text-berryDark text-xs font-extrabold uppercase tracking-wider">
+                    📖 Heartfelt Chapters For You
+                </span>
+                <h2 class="font-script text-3xl sm:text-5xl text-berryDark mt-3 mb-3">
+                    Little Love Notes & Cozy Paragraphs For Iffah
+                </h2>
+                <p class="text-cocoaLight text-base sm:text-lg font-semibold">
+                    Switch between the chapters below to read all the sweet things written just to put the biggest smile on your face.
+                </p>
+            </div>
+
+            <!-- Interactive Chapter Tabs -->
+            <div class="flex flex-wrap justify-center gap-2.5 mb-8" role="tablist">
+                <button onclick="selectLetterTab(0)" id="letter-tab-0" class="letter-tab px-5 py-3 rounded-full font-extrabold text-sm transition cursor-pointer bg-berry text-white shadow-cute">
+                    🌸 1. Literally the Cutest
+                </button>
+                <button onclick="selectLetterTab(1)" id="letter-tab-1" class="letter-tab px-5 py-3 rounded-full font-extrabold text-sm transition cursor-pointer bg-blush/70 text-cocoa hover:bg-blush">
+                    🍫 2. Sweet Like Lava Cake
+                </button>
+                <button onclick="selectLetterTab(2)" id="letter-tab-2" class="letter-tab px-5 py-3 rounded-full font-extrabold text-sm transition cursor-pointer bg-blush/70 text-cocoa hover:bg-blush">
+                    ✨ 3. Your Magical Vibe
+                </button>
+                <button onclick="selectLetterTab(3)" id="letter-tab-3" class="letter-tab px-5 py-3 rounded-full font-extrabold text-sm transition cursor-pointer bg-blush/70 text-cocoa hover:bg-blush">
+                    🧸 4. Cozy Reminder
+                </button>
+            </div>
+
+            <!-- Letter Reading Paper Container -->
+            <div id="letter-display" class="max-w-4xl mx-auto bg-gradient-to-b from-white to-[#FFF8FA] rounded-[2rem] p-7 sm:p-11 border-2 border-pink-200 shadow-sm relative">
+                <div class="flex items-center justify-between border-b-2 border-dashed border-pink-200 pb-4 mb-6">
+                    <div class="flex items-center gap-3">
+                        <span id="letter-icon" class="text-3xl sm:text-4xl">🌸</span>
+                        <div>
+                            <h3 id="letter-title" class="text-xl sm:text-2xl font-extrabold text-cocoa">
+                                Chapter 1: Why You Are Literally the Cutest Person Ever
+                            </h3>
+                            <p id="letter-subtitle" class="text-xs sm:text-sm font-bold text-berryDark">
+                                Written with extra sparkles and endless admiration
+                            </p>
+                        </div>
+                    </div>
+                    <span class="hidden sm:inline-block font-script text-lg text-berry">For Iffah ♥</span>
+                </div>
+
+                <div id="letter-paragraphs" class="space-y-5 text-cocoa text-base sm:text-lg leading-relaxed font-medium">
+                    <!-- Populated dynamically with rich multi-paragraph content -->
+                </div>
+
+                <div class="mt-8 pt-5 border-t border-pink-100 flex flex-wrap items-center justify-between gap-4">
+                    <span class="text-sm font-bold text-cocoaLight italic">
+                        "Stay as sweet, warm, and wonderful as you always are, Iffah."
+                    </span>
+                    <button onclick="nextLetterTab()" class="px-5 py-2.5 rounded-full bg-lavender text-lavenderDeep font-extrabold text-sm hover:bg-lavenderDeep hover:text-white transition cursor-pointer">
+                        Read Next Chapter →
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             5. INTERACTIVE "SEND VIRTUAL HUGS, KISSES & CAKE" COUNTER
+        ========================================================== -->
+        <section id="hugs-station" class="scroll-mt-24 glass-card rounded-[2.5rem] p-7 sm:p-12 shadow-cute">
+            <div class="text-center max-w-2xl mx-auto mb-8">
+                <span class="px-4 py-1.5 rounded-full bg-lavender text-lavenderDeep text-xs font-extrabold uppercase tracking-wider">
+                    🧸 Interactive Care Package
+                </span>
+                <h2 class="font-script text-3xl sm:text-5xl text-cocoa mt-3 mb-2">
+                    Send Iffah Unlimited Love & Treats
+                </h2>
+                <p class="text-cocoaLight text-base font-semibold">
+                    Tap any button below to send floating hugs, forehead kisses, headpats, and fresh lava cake slices straight to Iffah!
+                </p>
+            </div>
+
+            <!-- Milestone Banner -->
+            <div class="max-w-2xl mx-auto mb-8 bg-gradient-to-r from-blush via-vanilla to-lavender rounded-2xl p-4 text-center border border-pink-200 shadow-sm">
+                <p id="care-milestone" class="font-extrabold text-sm sm:text-base text-cocoa">
+                    🌟 Total Love Sent So Far: <span id="total-love-count" class="text-berryDark text-lg">0</span> — Keep tapping to unlock cute milestones!
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                <!-- Virtual Hugs -->
+                <div class="bg-white rounded-3xl p-6 border-2 border-pink-200 text-center shadow-sm hover:shadow-cute transition flex flex-col justify-between">
+                    <div>
+                        <div class="text-5xl mb-3">🤗</div>
+                        <h3 class="font-extrabold text-lg text-cocoa">Cozy Bear Hugs</h3>
+                        <p class="text-xs text-cocoaLight mt-1 mb-4">Warm, squishy hugs that melt all stress away</p>
+                    </div>
+                    <div>
+                        <div id="count-hugs" class="font-script text-3xl text-berryDark mb-3">0</div>
+                        <button onclick="sendCare('hugs', '🤗', event)" class="w-full py-3 rounded-2xl bg-blush hover:bg-berry text-berryDark hover:text-white font-extrabold text-sm transition active:scale-95 cursor-pointer">
+                            + Send Warm Hug
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Lava Cake Slices -->
+                <div class="bg-white rounded-3xl p-6 border-2 border-caramel/60 text-center shadow-sm hover:shadow-cocoa transition flex flex-col justify-between">
+                    <div>
+                        <div class="text-5xl mb-3">🍰</div>
+                        <h3 class="font-extrabold text-lg text-cocoa">Lava Cake Slices</h3>
+                        <p class="text-xs text-cocoaLight mt-1 mb-4">Warm chocolate fudge goodness for our cake queen</p>
+                    </div>
+                    <div>
+                        <div id="count-cakes" class="font-script text-3xl text-cocoa mb-3">0</div>
+                        <button onclick="sendCare('cakes', '🍫', event)" class="w-full py-3 rounded-2xl bg-vanilla hover:bg-cocoa text-cocoa hover:text-cream font-extrabold text-sm transition active:scale-95 cursor-pointer">
+                            + Send Lava Cake
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Gentle Headpats -->
+                <div class="bg-white rounded-3xl p-6 border-2 border-purple-200 text-center shadow-sm hover:shadow-cute transition flex flex-col justify-between">
+                    <div>
+                        <div class="text-5xl mb-3">🥰</div>
+                        <h3 class="font-extrabold text-lg text-cocoa">Gentle Headpats</h3>
+                        <p class="text-xs text-cocoaLight mt-1 mb-4">Soft "you're doing amazing, Iffah" pats</p>
+                    </div>
+                    <div>
+                        <div id="count-pats" class="font-script text-3xl text-lavenderDeep mb-3">0</div>
+                        <button onclick="sendCare('pats', '✨', event)" class="w-full py-3 rounded-2xl bg-lavender hover:bg-lavenderDeep text-lavenderDeep hover:text-white font-extrabold text-sm transition active:scale-95 cursor-pointer">
+                            + Send Headpat
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Flying Kisses -->
+                <div class="bg-white rounded-3xl p-6 border-2 border-pink-200 text-center shadow-sm hover:shadow-cute transition flex flex-col justify-between">
+                    <div>
+                        <div class="text-5xl mb-3">😘</div>
+                        <h3 class="font-extrabold text-lg text-cocoa">Forehead Kisses</h3>
+                        <p class="text-xs text-cocoaLight mt-1 mb-4">Sweetest little forehead boops & affection</p>
+                    </div>
+                    <div>
+                        <div id="count-kisses" class="font-script text-3xl text-berryDark mb-3">0</div>
+                        <button onclick="sendCare('kisses', '💖', event)" class="w-full py-3 rounded-2xl bg-blush hover:bg-berry text-berryDark hover:text-white font-extrabold text-sm transition active:scale-95 cursor-pointer">
+                            + Send Sweet Kiss
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             6. INTERACTIVE "OPEN WHEN..." 3D FLIP CARDS
+        ========================================================== -->
+        <section id="open-when" class="scroll-mt-24">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <span class="px-4 py-1.5 rounded-full bg-blush text-berryDark text-xs font-extrabold uppercase tracking-wider">
+                    💌 Tap Any Envelope Card To Flip
+                </span>
+                <h2 class="font-script text-3xl sm:text-5xl text-berryDark mt-3 mb-2">
+                    "Open When..." Secret Cards For Iffah
+                </h2>
+                <p class="text-cocoaLight text-base sm:text-lg font-semibold">
+                    Tap any of these pastel cards to flip them around and reveal a secret sweet message written just for that exact mood!
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Flip Card 1 -->
+                <div onclick="this.classList.toggle('flipped')" class="flip-card perspective-1000 h-72 cursor-pointer group">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front bg-gradient-to-br from-blush to-pink-200 border-2 border-white p-7 shadow-cute flex flex-col items-center justify-center text-center">
+                            <span class="text-5xl mb-4 group-hover:scale-110 transition">😊</span>
+                            <h3 class="text-xl font-extrabold text-cocoa">Open When You Want an Instant Smile</h3>
+                            <span class="mt-4 px-3.5 py-1 rounded-full bg-white/80 text-berryDark text-xs font-extrabold">Tap to Flip ✨</span>
+                        </div>
+                        <div class="flip-card-back bg-white border-2 border-berry p-7 shadow-cute flex flex-col items-center justify-center text-center">
+                            <p class="text-sm sm:text-base font-bold text-cocoa leading-relaxed">
+                                "Hey Iffah! Just in case you forgot today: your smile is genuinely one of the prettiest, warmest things in the entire world. Whenever you grin, everything instantly feels lighter and happier. Keep shining, cutie!"
+                            </p>
+                            <span class="mt-3 text-xs font-extrabold text-berryDark">💖 Always cheering for you</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flip Card 2 -->
+                <div onclick="this.classList.toggle('flipped')" class="flip-card perspective-1000 h-72 cursor-pointer group">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front bg-gradient-to-br from-vanilla to-amber-200 border-2 border-white p-7 shadow-cocoa flex flex-col items-center justify-center text-center">
+                            <span class="text-5xl mb-4 group-hover:scale-110 transition">🍫</span>
+                            <h3 class="text-xl font-extrabold text-cocoa">Open When You're Craving Lava Cake</h3>
+                            <span class="mt-4 px-3.5 py-1 rounded-full bg-white/80 text-cocoa text-xs font-extrabold">Tap to Flip 🍰</span>
+                        </div>
+                        <div class="flip-card-back bg-cocoa text-cream border-2 border-caramel p-7 shadow-cocoa flex flex-col items-center justify-center text-center">
+                            <p class="text-sm sm:text-base font-bold leading-relaxed">
+                                "This is your official sign to go get a warm, gooey molten chocolate lava cake right now! No excuses—you deserve the richest chocolate center, a scoop of cold vanilla ice cream, and all the sweetness in the world."
+                            </p>
+                            <span class="mt-3 text-xs font-extrabold text-caramel">🌋 Official Lava Cake Queen</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flip Card 3 -->
+                <div onclick="this.classList.toggle('flipped')" class="flip-card perspective-1000 h-72 cursor-pointer group">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front bg-gradient-to-br from-lavender to-purple-200 border-2 border-white p-7 shadow-cute flex flex-col items-center justify-center text-center">
+                            <span class="text-5xl mb-4 group-hover:scale-110 transition">🥺</span>
+                            <h3 class="text-xl font-extrabold text-cocoa">Open When You Need a Cuteness Reminder</h3>
+                            <span class="mt-4 px-3.5 py-1 rounded-full bg-white/80 text-lavenderDeep text-xs font-extrabold">Tap to Flip 🌸</span>
+                        </div>
+                        <div class="flip-card-back bg-white border-2 border-lavenderDeep p-7 shadow-cute flex flex-col items-center justify-center text-center">
+                            <p class="text-sm sm:text-base font-bold text-cocoa leading-relaxed">
+                                "Excuse me, Iffah, do you have a license for being this cute?! Everything about your vibe, your kindness, and your adorable reactions makes you 10/10 impossible not to adore. Never doubt how wonderful you are!"
+                            </p>
+                            <span class="mt-3 text-xs font-extrabold text-lavenderDeep">🎀 Certified 1000% Cutie</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flip Card 4 -->
+                <div onclick="this.classList.toggle('flipped')" class="flip-card perspective-1000 h-72 cursor-pointer group">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front bg-gradient-to-br from-rose-100 to-blush border-2 border-white p-7 shadow-cute flex flex-col items-center justify-center text-center">
+                            <span class="text-5xl mb-4 group-hover:scale-110 transition">🌙</span>
+                            <h3 class="text-xl font-extrabold text-cocoa">Open When You're Having a Tired Day</h3>
+                            <span class="mt-4 px-3.5 py-1 rounded-full bg-white/80 text-berryDark text-xs font-extrabold">Tap to Flip 🧸</span>
+                        </div>
+                        <div class="flip-card-back bg-white border-2 border-berry p-7 shadow-cute flex flex-col items-center justify-center text-center">
+                            <p class="text-sm sm:text-base font-bold text-cocoa leading-relaxed">
+                                "Take a deep, cozy breath, Iffah. Wrap yourself in your softest blanket, rest your eyes, and remember you don't have to do everything at once. You are deeply appreciated just for being you."
+                            </p>
+                            <span class="mt-3 text-xs font-extrabold text-berryDark">☁️ Sending soft cloud hugs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flip Card 5 -->
+                <div onclick="this.classList.toggle('flipped')" class="flip-card perspective-1000 h-72 cursor-pointer group">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front bg-gradient-to-br from-amber-100 to-vanilla border-2 border-white p-7 shadow-cute flex flex-col items-center justify-center text-center">
+                            <span class="text-5xl mb-4 group-hover:scale-110 transition">🌟</span>
+                            <h3 class="text-xl font-extrabold text-cocoa">Open When You Need a Confidence Boost</h3>
+                            <span class="mt-4 px-3.5 py-1 rounded-full bg-white/80 text-cocoa text-xs font-extrabold">Tap to Flip 👑</span>
+                        </div>
+                        <div class="flip-card-back bg-white border-2 border-caramel p-7 shadow-cute flex flex-col items-center justify-center text-center">
+                            <p class="text-sm sm:text-base font-bold text-cocoa leading-relaxed">
+                                "You are smart, capable, radiant, and unstoppable, Iffah! Whatever is ahead of you, you've got the grace and sparkle to conquer it effortlessly. Go show the world your magic!"
+                            </p>
+                            <span class="mt-3 text-xs font-extrabold text-cocoa">✨ Unstoppable & Adorable</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flip Card 6 -->
+                <div onclick="this.classList.toggle('flipped')" class="flip-card perspective-1000 h-72 cursor-pointer group">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front bg-gradient-to-br from-purple-100 to-pink-100 border-2 border-white p-7 shadow-cute flex flex-col items-center justify-center text-center">
+                            <span class="text-5xl mb-4 group-hover:scale-110 transition">🍓</span>
+                            <h3 class="text-xl font-extrabold text-cocoa">Open Just Because You're Amazing</h3>
+                            <span class="mt-4 px-3.5 py-1 rounded-full bg-white/80 text-berryDark text-xs font-extrabold">Tap to Flip 💕</span>
+                        </div>
+                        <div class="flip-card-back bg-white border-2 border-berry p-7 shadow-cute flex flex-col items-center justify-center text-center">
+                            <p class="text-sm sm:text-base font-bold text-cocoa leading-relaxed">
+                                "No special occasion needed—this card exists purely to say thank you for existing, Iffah! The world is genuinely ten times sweeter, warmer, and cuter with you in it."
+                            </p>
+                            <span class="mt-3 text-xs font-extrabold text-berryDark">🍓 Pure Appreciation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             7. CUTE POLAROID & AESTHETIC SCRAPBOOK SECTION
+        ========================================================== -->
+        <section id="scrapbook" class="scroll-mt-24 glass-card rounded-[2.5rem] p-7 sm:p-12 shadow-cute-lg">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <span class="px-4 py-1.5 rounded-full bg-vanilla text-cocoa border border-caramel/50 text-xs font-extrabold uppercase tracking-wider">
+                    📸 Pastel Aesthetic Board
+                </span>
+                <h2 class="font-script text-3xl sm:text-5xl text-cocoa mt-3 mb-2">
+                    The Official Iffah Vibe Scrapbook
+                </h2>
+                <p class="text-cocoaLight text-base sm:text-lg font-semibold">
+                    A little collection of everything that reminds us of Iffah's sweet, cozy, and unforgettable aesthetic.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Polaroid 1 -->
+                <div class="bg-white p-4 pb-6 rounded-2xl shadow-cute border border-pink-100 transform -rotate-2 hover:rotate-0 hover:scale-105 transition duration-300">
+                    <div class="h-44 rounded-xl bg-gradient-to-br from-pink-200 via-blush to-rose-100 flex flex-col items-center justify-center relative overflow-hidden">
+                        <span class="text-6xl animate-float-slow">🌸</span>
+                        <span class="mt-2 px-3 py-0.5 rounded-full bg-white/80 text-xs font-extrabold text-berryDark">Soft Pastel Energy</span>
+                    </div>
+                    <h3 class="font-script text-xl text-berryDark mt-4 text-center">Sunshine Smile</h3>
+                    <p class="text-xs text-cocoaLight text-center mt-1.5 font-semibold leading-relaxed">
+                        The cutest aura that turns even a rainy afternoon into spring blossom weather.
+                    </p>
+                </div>
+
+                <!-- Polaroid 2 -->
+                <div class="bg-white p-4 pb-6 rounded-2xl shadow-cocoa border border-amber-100 transform rotate-2 hover:rotate-0 hover:scale-105 transition duration-300">
+                    <div class="h-44 rounded-xl bg-gradient-to-br from-[#5E3835] via-[#4A2C2A] to-[#2D1816] flex flex-col items-center justify-center relative overflow-hidden">
+                        <span class="text-6xl animate-float-reverse">🌋</span>
+                        <span class="mt-2 px-3 py-0.5 rounded-full bg-caramel text-cocoa text-xs font-extrabold">Fav Treat Forever</span>
+                    </div>
+                    <h3 class="font-script text-xl text-cocoa mt-4 text-center">Molten Lava Cake</h3>
+                    <p class="text-xs text-cocoaLight text-center mt-1.5 font-semibold leading-relaxed">
+                        Warm, gooey chocolate perfection—the ultimate comfort dessert for the sweetest girl.
+                    </p>
+                </div>
+
+                <!-- Polaroid 3 -->
+                <div class="bg-white p-4 pb-6 rounded-2xl shadow-cute border border-purple-100 transform -rotate-1 hover:rotate-0 hover:scale-105 transition duration-300">
+                    <div class="h-44 rounded-xl bg-gradient-to-br from-lavender via-purple-200 to-pink-100 flex flex-col items-center justify-center relative overflow-hidden">
+                        <span class="text-6xl animate-float-slow">🎀</span>
+                        <span class="mt-2 px-3 py-0.5 rounded-full bg-white/80 text-lavenderDeep text-xs font-extrabold">100% Precious</span>
+                    </div>
+                    <h3 class="font-script text-xl text-lavenderDeep mt-4 text-center">Adorable Reactions</h3>
+                    <p class="text-xs text-cocoaLight text-center mt-1.5 font-semibold leading-relaxed">
+                        Every little laugh, expression, and sweet quirk that makes Iffah completely one of a kind.
+                    </p>
+                </div>
+
+                <!-- Polaroid 4 -->
+                <div class="bg-white p-4 pb-6 rounded-2xl shadow-cute border border-amber-100 transform rotate-2 hover:rotate-0 hover:scale-105 transition duration-300">
+                    <div class="h-44 rounded-xl bg-gradient-to-br from-vanilla via-amber-100 to-pink-100 flex flex-col items-center justify-center relative overflow-hidden">
+                        <span class="text-6xl animate-float-reverse">🧸</span>
+                        <span class="mt-2 px-3 py-0.5 rounded-full bg-white/80 text-cocoa text-xs font-extrabold">Cozy & Kind</span>
+                    </div>
+                    <h3 class="font-script text-xl text-berryDark mt-4 text-center">Heart of Gold</h3>
+                    <p class="text-xs text-cocoaLight text-center mt-1.5 font-semibold leading-relaxed">
+                        Warm, caring, and effortlessly charming—everyone feels lucky just knowing you.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Cute Footer -->
+    <footer class="relative z-10 text-center pb-12 px-4">
+        <div class="max-w-2xl mx-auto glass-card rounded-full py-4 px-6 shadow-cute inline-flex flex-wrap items-center justify-center gap-2 text-sm font-bold text-cocoa">
+            <span>Made with infinite 💖 & warm 🍫 lava cake vibes exclusively for</span>
+            <span class="font-script text-lg text-berryDark">Iffah</span>
+            <span>✨</span>
+        </div>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // =========================================================
+        // 1. PARTICLE BURST & AMBIENT FLOATING SPARKLES ENGINE
+        // =========================================================
+        const burstEmojis = ['💖', '✨', '🌸', '🍓', '🍫', '🍰', '🎀', '💕', '🧸', '🧁'];
+
+        function spawnBurst(x, y, customEmojis = burstEmojis, count = 14) {
+            for (let i = 0; i < count; i++) {
+                const particle = document.createElement('span');
+                particle.className = 'burst-particle text-xl sm:text-2xl';
+                particle.textContent = customEmojis[Math.floor(Math.random() * customEmojis.length)];
+                
+                const angle = (Math.PI * 2 * i) / count + (Math.random() - 0.5) * 0.5;
+                const velocity = 60 + Math.random() * 110;
+                const tx = Math.cos(angle) * velocity + 'px';
+                const ty = (Math.sin(angle) * velocity - 40) + 'px';
+                const rot = (Math.random() * 360 - 180) + 'deg';
+
+                particle.style.left = x + 'px';
+                particle.style.top = y + 'px';
+                particle.style.setProperty('--tx', tx);
+                particle.style.setProperty('--ty', ty);
+                particle.style.setProperty('--rot', rot);
+
+                document.body.appendChild(particle);
+                setTimeout(() => particle.remove(), 1200);
+            }
+        }
+
+        function triggerHeroCelebration(e) {
+            const rect = e.currentTarget.getBoundingClientRect();
+            spawnBurst(rect.left + rect.width / 2, rect.top + rect.height / 2, ['💖', '✨', '🌸', '🎀', '🍰'], 24);
+        }
+
+        // Ambient gentle background sparkles
+        function initAmbientSparkles() {
+            const container = document.getElementById('ambient-layer');
+            const icons = ['✨', '🌸', '💗', '🍰', '🎀'];
+            for (let i = 0; i < 18; i++) {
+                const el = document.createElement('div');
+                el.textContent = icons[i % icons.length];
+                el.className = 'absolute opacity-25 select-none ' + (i % 2 === 0 ? 'animate-float-slow' : 'animate-float-reverse');
+                el.style.left = Math.random() * 96 + '%';
+                el.style.top = Math.random() * 95 + '%';
+                el.style.fontSize = (16 + Math.random() * 16) + 'px';
+                el.style.animationDelay = (Math.random() * 4) + 's';
+                container.appendChild(el);
+            }
+        }
+
+        // =========================================================
+        // 2. CUTENESS OVERLOAD METER LOGIC
+        // =========================================================
+        let cutenessLevel = 100;
+        const meterStages = [
+            { limit: 100, badge: 'Level: Super Cute 🌸', bar: '45%', msg: '"Baseline reading already exceeds normal human cuteness standards!"' },
+            { limit: 250, badge: 'Level: Dangerously Adorable 💖', bar: '65%', msg: '"Whoa! Iffah smiled and the needle just jumped past 200%!"' },
+            { limit: 500, badge: 'Level: Sweeter Than Lava Cake 🍫', bar: '82%', msg: '"Alert: Cuteness levels now rival warm molten chocolate lava cake!"' },
+            { limit: 999, badge: 'Level: Cosmic Cutie Overload ✨', bar: '95%', msg: '"Sensors are sparkling! Nobody on earth is cuter than Iffah!"' },
+            { limit: Infinity, badge: 'Level: INFINITE / BROKE THE SCALE 👑', bar: '100%', msg: '"ERROR 404: Cuteness limit does not exist! Iffah officially broke the meter! 💖🎉"' }
+        ];
+
+        function boostCuteness(e) {
+            if (cutenessLevel < 1000) {
+                cutenessLevel += Math.floor(75 + Math.random() * 95);
+            } else {
+                cutenessLevel += 500;
+            }
+
+            const percentEl = document.getElementById('cuteness-percent');
+            const barEl = document.getElementById('cuteness-bar');
+            const badgeEl = document.getElementById('meter-badge');
+            const statusEl = document.getElementById('meter-status-text');
+
+            percentEl.textContent = cutenessLevel >= 1200 ? '∞% OVERLOAD!' : cutenessLevel + '%';
+
+            const stage = meterStages.find(s => cutenessLevel <= s.limit);
+            badgeEl.textContent = stage.badge;
+            barEl.style.width = stage.bar;
+            statusEl.textContent = stage.msg;
+
+            if (e) {
+                spawnBurst(e.clientX, e.clientY, ['💖', '✨', '🌸', '👑'], 16);
+            }
+        }
+
+        function resetCuteness() {
+            cutenessLevel = 100;
+            document.getElementById('cuteness-percent').textContent = '100%';
+            document.getElementById('cuteness-bar').style.width = '45%';
+            document.getElementById('meter-badge').textContent = meterStages[0].badge;
+            document.getElementById('meter-status-text').textContent = meterStages[0].msg;
+        }
+
+        // =========================================================
+        // 3. COMPLIMENT & SWEET NOTE DISPENSER
+        // =========================================================
+        const compliments = [
+            { emoji: '🌷', text: '"Iffah has the kind of smile that makes bad days immediately pack their bags and leave. You are genuinely sunshine in human form!"', tag: '#EffortlesslyAdorable' },
+            { emoji: '🍫', text: '"If happiness had a flavor, it would be warm molten chocolate lava cake—and if happiness had a name, it would definitely be Iffah!"', tag: '#SweeterThanCake' },
+            { emoji: '🎀', text: '"How do you manage to look and sound so effortlessly cute even when you are just doing the simplest everyday things?!"', tag: '#MainCharacterEnergy' },
+            { emoji: '✨', text: '"Your laugh is literally top-tier serotonin. Whenever you are happy, everyone around you automatically feels ten times lighter."', tag: '#PureSerotonin' },
+            { emoji: '🍓', text: '"You have the softest, kindest heart paired with the most adorable personality. Truly a 1000/10 masterpiece!"', tag: '#HeartOfGold' },
+            { emoji: '🧸', text: '"Being around you feels like wrapping up in a warm pastel blanket on a cozy evening with a freshly baked dessert."', tag: '#CozyVibesOnly' },
+            { emoji: '🌸', text: '"Even flowers get a little jealous of how naturally pretty and radiant you are, Iffah!"', tag: '#BlossomQueen' },
+            { emoji: '🍰', text: '"Your love for cake is honestly one of the cutest things about you—sweet recognizes sweet!"', tag: '#LavaCakeLover' },
+            { emoji: '💫', text: '"There is nobody else in the entire universe with your exact sparkle, humor, and charm. Never change a single thing!"', tag: '#OneInAMillion' },
+            { emoji: '🥰', text: '"Scientific fact: thinking about Iffah instantly boosts mood levels by 500%!"', tag: '#InstantSmile' }
+        ];
+        let complimentIndex = 0;
+
+        function nextCompliment(e) {
+            complimentIndex = (complimentIndex + 1) % compliments.length;
+            const item = compliments[complimentIndex];
+            const card = document.getElementById('compliment-card');
+
+            card.style.transform = 'scale(0.95)';
+            card.style.opacity = '0.6';
+
+            setTimeout(() => {
+                document.getElementById('compliment-emoji').textContent = item.emoji;
+                document.getElementById('compliment-text').textContent = item.text;
+                document.getElementById('compliment-tag').textContent = item.tag;
+                document.getElementById('compliment-counter').textContent = `Note #${complimentIndex + 1} of ${compliments.length}`;
+                card.style.transform = 'scale(1)';
+                card.style.opacity = '1';
+            }, 160);
+
+            if (e) {
+                spawnBurst(e.clientX, e.clientY, ['✨', '💌', '💖', '🌸'], 12);
+            }
+        }
+
+        // =========================================================
+        // 4. INTERACTIVE LAVA CAKE BAKERY LOGIC
+        // =========================================================
+        const cakeState = {
+            lava: false,
+            icecream: false,
+            berries: false,
+            sugar: false
+        };
+
+        function toggleCakeTopping(type, e) {
+            cakeState[type] = !cakeState[type];
+            const feedback = document.getElementById('cake-feedback');
+
+            if (type === 'lava') {
+                const puddle = document.getElementById('svg-lava-puddle');
+                puddle.style.opacity = cakeState.lava ? '0.95' : '0.3';
+                puddle.setAttribute('rx', cakeState.lava ? '82' : '68');
+                feedback.textContent = cakeState.lava ? '🍫 Extra warm molten chocolate fudge poured!' : 'Standard lava ooze active.';
+            } else if (type === 'icecream') {
+                const scoop = document.getElementById('svg-ice-cream');
+                scoop.style.opacity = cakeState.icecream ? '1' : '0';
+                scoop.style.transform = cakeState.icecream ? 'scale(1)' : 'scale(0.75)';
+                feedback.textContent = cakeState.icecream ? '🍨 Cold creamy vanilla scoop added on top!' : 'Vanilla scoop removed.';
+            } else if (type === 'berries') {
+                const berries = document.getElementById('svg-berries');
+                berries.style.opacity = cakeState.berries ? '1' : '0';
+                feedback.textContent = cakeState.berries ? '🍓 Fresh sweet strawberries placed on the plate!' : 'Strawberries removed.';
+            } else if (type === 'sugar') {
+                const sugar = document.getElementById('svg-sugar');
+                sugar.style.opacity = cakeState.sugar ? '1' : '0';
+                feedback.textContent = cakeState.sugar ? '✨ Magical powdered sugar & sparkles dusted!' : 'Sparkle dust removed.';
+            }
+
+            if (e) {
+                spawnBurst(e.clientX, e.clientY, ['🍫', '🍰', '🍨', '🍓', '✨'], 10);
+            }
+        }
+
+        function serveCakeToIffah(e) {
+            const feedback = document.getElementById('cake-feedback');
+            feedback.innerHTML = '🎉 <span class="text-berryDark">Served warm to Iffah! She took one bite and smiled the cutest smile ever!</span>';
+            if (e) {
+                spawnBurst(e.clientX, e.clientY, ['🍰', '🍫', '💖', '✨', '🥰'], 22);
+            }
+        }
+
+        // =========================================================
+        // 5. MULTI-PARAGRAPH LOVE & APPRECIATION LETTERS
+        // =========================================================
+        const storyChapters = [
+            {
+                icon: '🌸',
+                title: 'Chapter 1: Why You Are Literally the Cutest Person Ever',
+                subtitle: 'Written with extra sparkles and endless admiration',
+                paragraphs: [
+                    'Dear Iffah, have you ever stopped to realize just how naturally adorable you are? Some people try really hard to be charming, yet you do it effortlessly just by showing up and being yourself. From the way your eyes light up when you talk about things you love to your gentle, endearing expressions, every little detail about you feels like pure magic.',
+                    'There is a warmth in your personality that immediately puts everyone around you at ease. When you smile, it is genuinely impossible not to smile right back. You carry a soft, joyful energy that turns even the most ordinary conversations into favorite memories.',
+                    'Never forget that your cuteness isn’t just about how lovely you look—it’s in your sweet nature, your thoughtful heart, and the adorable way you bring happiness into the lives of people lucky enough to know you.'
+                ]
+            },
+            {
+                icon: '🍫',
+                title: 'Chapter 2: Sweet Like Warm Molten Lava Cake',
+                subtitle: 'A delicious tribute to your favorite dessert in the world',
+                paragraphs: [
+                    'Everyone who knows Iffah knows one undeniable truth: cake—especially warm, rich, gooey molten chocolate lava cake—holds a very special place in your heart! And honestly, there could not be a more fitting favorite dessert for someone as sweet as you.',
+                    'Just like a freshly baked lava cake straight out of the oven, you have the most comforting, heartwarming presence. On the outside, you are graceful, charming, and sweet; on the inside, you have a heart overflowing with warmth, kindness, and genuine affection.',
+                    'Whenever you are having a long day or simply want a treat, you deserve a big plate of molten chocolate lava cake with all your favorite toppings—because the sweetest girl in the world always deserves the sweetest treats!'
+                ]
+            },
+            {
+                icon: '✨',
+                title: 'Chapter 3: The Little Things That Make You Special',
+                subtitle: 'Celebrating all the details that make Iffah unforgettable',
+                paragraphs: [
+                    'It is the tiny, everyday moments with you that stand out the most, Iffah. The way you get excited over cute things, the way your laugh bubbles up when something catches you off guard, and the genuine care you show when someone needs a friend.',
+                    'You have a rare combination of sweetness and strength. Even while being the cutest soul around, you carry yourself with grace, resilience, and a wonderful sense of humor that makes every moment brighter.',
+                    'If there were an award for making the world a softer, happier, and infinitely cuter place just by existing, you would win first place every single year without any competition.'
+                ]
+            },
+            {
+                icon: '🧸',
+                title: 'Chapter 4: A Cozy Reminder Just For You',
+                subtitle: 'Read this whenever you need extra love and warmth',
+                paragraphs: [
+                    'Hey Iffah, take a moment right now to pause and feel proud of the wonderful person you are. Life gets busy sometimes, and it is easy to forget to celebrate yourself—so let this entire page do the celebrating for you!',
+                    'You are deeply cherished, endlessly appreciated, and admired far more than words on a screen could ever fully capture. Whether you are having an energetic day or just want to curl up somewhere cozy with a slice of cake, remember that you are always worthy of all the love and happiness in the universe.',
+                    'Keep smiling your brightest smile, keep loving lava cake with all your heart, and keep being the most adorable Iffah the world has ever seen! 💖'
+                ]
+            }
+        ];
+
+        let currentChapter = 0;
+
+        function selectLetterTab(index) {
+            currentChapter = index;
+            const chapter = storyChapters[index];
+
+            document.getElementById('letter-icon').textContent = chapter.icon;
+            document.getElementById('letter-title').textContent = chapter.title;
+            document.getElementById('letter-subtitle').textContent = chapter.subtitle;
+
+            const paraContainer = document.getElementById('letter-paragraphs');
+            paraContainer.innerHTML = chapter.paragraphs
+                .map(text => `<p>${text}</p>`)
+                .join('');
+
+            // Update active tab styling
+            document.querySelectorAll('.letter-tab').forEach((btn, idx) => {
+                if (idx === index) {
+                    btn.className = 'letter-tab px-5 py-3 rounded-full font-extrabold text-sm transition cursor-pointer bg-berry text-white shadow-cute';
+                } else {
+                    btn.className = 'letter-tab px-5 py-3 rounded-full font-extrabold text-sm transition cursor-pointer bg-blush/70 text-cocoa hover:bg-blush';
+                }
+            });
+        }
+
+        function nextLetterTab() {
+            const next = (currentChapter + 1) % storyChapters.length;
+            selectLetterTab(next);
+        }
+
+        // =========================================================
+        // 6. VIRTUAL HUGS, KISSES & LAVA CAKE COUNTERS
+        // =========================================================
+        const careCounts = {
+            hugs: 0,
+            cakes: 0,
+            pats: 0,
+            kisses: 0
+        };
+
+        function sendCare(type, emoji, e) {
+            careCounts[type]++;
+            document.getElementById('count-' + type).textContent = careCounts[type];
+
+            const total = careCounts.hugs + careCounts.cakes + careCounts.pats + careCounts.kisses;
+            const milestoneEl = document.getElementById('care-milestone');
+
+            let extraMsg = 'Keep tapping to unlock cute milestones!';
+            if (total >= 50) {
+                extraMsg = '👑 ROYAL LEVEL! Iffah is officially swimming in hugs & lava cake!';
+            } else if (total >= 25) {
+                extraMsg = '🌋 LAVA CAKE FEAST! So much sweetness sent to Iffah!';
+            } else if (total >= 10) {
+                extraMsg = '💖 SUPER SWEET! Iffah is blushing from all this love!';
+            } else if (total >= 1) {
+                extraMsg = '🌸 Yay! Delivery received with the biggest smile!';
+            }
+
+            milestoneEl.innerHTML = `🌟 Total Love Sent So Far: <span class="text-berryDark text-lg">${total}</span> — ${extraMsg}`;
+
+            if (e) {
+                spawnBurst(e.clientX, e.clientY, [emoji, '💖', '✨'], 14);
+            }
+        }
+
+        // Initialize page defaults on load
+        window.addEventListener('DOMContentLoaded', () => {
+            initAmbientSparkles();
+            selectLetterTab(0);
+        });
+    </script>
+</body>
+</html>
