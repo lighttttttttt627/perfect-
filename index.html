@@ -1,1066 +1,376 @@
+```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To My Dearest Jaspreet 💖 The Prettiest & Cutest</title>
-    <!-- Google Fonts -->
+    <title>For Iffah ✨ The Cutest Soul in the Universe</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Pacifico for cute script headers, Quicksand & Nunito for soft rounded text -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome for cute icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Canvas Confetti -->
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,600&family=Pacifico&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        script: ['Pacifico', 'cursive'],
+                        display: ['Quicksand', 'sans-serif'],
+                        body: ['Nunito', 'sans-serif'],
+                    },
+                    colors: {
+                        cream: '#FFF9F5',
+                        blush: '#FFE4EC',
+                        berry: '#FF6B9D',
+                        berryDark: '#E0487B',
+                        lavender: '#EDE4FF',
+                        lavenderDeep: '#9B7EDE',
+                        cocoa: '#4A2C2A',
+                        cocoaLight: '#6E4542',
+                        fudge: '#2D1816',
+                        caramel: '#F5B971',
+                        vanilla: '#FFF3D6',
+                    },
+                    boxShadow: {
+                        'cute': '0 12px 30px -6px rgba(255, 107, 157, 0.22)',
+                        'cute-lg': '0 20px 40px -10px rgba(255, 107, 157, 0.30)',
+                        'cocoa': '0 14px 32px -8px rgba(74, 44, 42, 0.25)',
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
-        :root {
-            --primary: #ff5e8e;
-            --primary-light: #ffb3c6;
-            --primary-dark: #e6396b;
-            --soft-blush: #fff0f5;
-            --lavender-mist: #f5edfc;
-            --cream: #fffdfa;
-            --gold: #f6c85f;
-            --text-dark: #4a2839;
-            --text-muted: #7e5768;
-            --card-bg: rgba(255, 255, 255, 0.88);
-            --card-border: rgba(255, 182, 193, 0.45);
-            --shadow-cute: 0 12px 30px rgba(255, 105, 180, 0.18);
-            --shadow-hover: 0 16px 36px rgba(255, 94, 142, 0.28);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            user-select: none;
-            -webkit-user-select: none;
-        }
-
         body {
-            font-family: 'Quicksand', sans-serif;
-            background: linear-gradient(135deg, #fff0f5 0%, #fae8ff 50%, #ffe4ec 100%);
-            color: var(--text-dark);
-            min-height: 100vh;
-            overflow-x: hidden;
-            position: relative;
-            line-height: 1.7;
-        }
-
-        /* Particle / Heart background canvas */
-        #bgCanvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .main-container {
-            position: relative;
-            z-index: 1;
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 24px 20px 80px 20px;
-        }
-
-        /* Floating Controls */
-        .floating-controls {
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
-            z-index: 99;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .floating-btn {
-            background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
-            color: white;
-            border: none;
-            width: 52px;
-            height: 52px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            cursor: pointer;
-            box-shadow: 0 8px 24px rgba(255, 117, 140, 0.4);
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .floating-btn:hover {
-            transform: scale(1.15) rotate(8deg);
-            box-shadow: 0 12px 28px rgba(255, 117, 140, 0.6);
-        }
-
-        .floating-btn:active {
-            transform: scale(0.95);
-        }
-
-        /* Header / Hero */
-        .hero {
-            text-align: center;
-            padding: 40px 16px 30px;
-        }
-
-        .heart-crown {
-            font-size: 2.4rem;
-            animation: bounceSoft 2s infinite ease-in-out;
-            display: inline-block;
-        }
-
-        .hero h1 {
-            font-family: 'Dancing Script', cursive;
-            font-size: clamp(3rem, 7vw, 4.8rem);
-            color: #d81b60;
-            text-shadow: 2px 4px 15px rgba(216, 27, 96, 0.2);
-            margin: 10px 0 5px;
-            font-weight: 700;
-        }
-
-        .hero-tagline {
-            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-            color: #8c3b68;
-            font-weight: 600;
-            max-width: 650px;
-            margin: 0 auto 20px;
-        }
-
-        .sparkle-badge-row {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 25px;
-        }
-
-        .badge-pill {
-            background: rgba(255, 255, 255, 0.85);
-            border: 1.5px solid #ffccd5;
-            padding: 6px 16px;
-            border-radius: 50px;
-            font-size: 0.92rem;
-            font-weight: 700;
-            color: #d81b60;
-            box-shadow: 0 4px 12px rgba(255, 182, 193, 0.25);
-            transition: all 0.25s ease;
-            cursor: pointer;
-        }
-
-        .badge-pill:hover {
-            transform: translateY(-3px) scale(1.05);
-            background: #ffecf1;
-            border-color: #ff8fa3;
-        }
-
-        /* Cute Card Style */
-        .cute-card {
-            background: var(--card-bg);
-            border: 2px solid var(--card-border);
-            border-radius: 28px;
-            padding: 30px;
-            box-shadow: var(--shadow-cute);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            margin-bottom: 35px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cute-card:hover {
-            box-shadow: var(--shadow-hover);
-        }
-
-        .card-header-icon {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 48px;
-            height: 48px;
-            background: #ffe3ec;
-            color: #ff3366;
-            border-radius: 16px;
-            font-size: 22px;
-            margin-bottom: 12px;
-        }
-
-        .section-title {
-            font-family: 'Dancing Script', cursive;
-            font-size: 2.4rem;
-            color: #c2185b;
-            margin-bottom: 8px;
-        }
-
-        .section-sub {
-            color: var(--text-muted);
-            font-size: 1.05rem;
-            margin-bottom: 24px;
-        }
-
-        /* Love / Cuteness Meter */
-        .meter-container {
-            background: #fff;
-            padding: 24px;
-            border-radius: 20px;
-            box-shadow: inset 0 2px 8px rgba(0,0,0,0.04);
-            border: 1px solid #ffd1dc;
-            text-align: center;
-        }
-
-        .meter-bar-outer {
-            width: 100%;
-            height: 28px;
-            background: #ffe5ec;
-            border-radius: 30px;
-            overflow: hidden;
-            position: relative;
-            border: 2px solid #ffb3c6;
-            margin: 15px 0;
-            box-shadow: inset 0 2px 4px rgba(0,0,0,0.06);
-        }
-
-        .meter-bar-inner {
-            height: 100%;
-            width: 85%;
-            background: linear-gradient(90deg, #ff758c 0%, #ff7eb3 50%, #ff4b72 100%);
-            border-radius: 30px;
-            transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            position: relative;
-        }
-
-        .meter-bar-inner::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(90deg, rgba(255,255,255,0.2) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.2) 75%, transparent 75%, transparent);
-            background-size: 40px 40px;
-            animation: moveStripes 2s linear infinite;
-        }
-
-        .meter-status {
-            font-weight: 800;
-            font-size: 1.25rem;
-            color: #d81b60;
-            margin-bottom: 12px;
-        }
-
-        .btn-cute {
-            background: linear-gradient(135deg, #ff4081 0%, #f50057 100%);
-            color: white;
-            font-family: 'Quicksand', sans-serif;
-            font-weight: 700;
-            font-size: 1.05rem;
-            border: none;
-            padding: 12px 28px;
-            border-radius: 50px;
-            cursor: pointer;
-            box-shadow: 0 6px 18px rgba(245, 0, 87, 0.35);
-            transition: all 0.25s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .btn-cute:hover {
-            transform: translateY(-3px) scale(1.04);
-            box-shadow: 0 10px 22px rgba(245, 0, 87, 0.45);
-        }
-
-        .btn-cute:active {
-            transform: translateY(1px) scale(0.98);
-        }
-
-        /* Reasons Grid (Cards) */
-        .reasons-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .reason-box {
-            background: white;
-            border: 2px dashed #ffccd5;
-            border-radius: 20px;
-            padding: 22px;
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            cursor: pointer;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .reason-box:hover {
-            transform: translateY(-8px) scale(1.02);
-            border-color: #ff4081;
-            border-style: solid;
-            box-shadow: 0 14px 28px rgba(255, 64, 129, 0.15);
-        }
-
-        .reason-box .icon {
-            font-size: 32px;
-            margin-bottom: 12px;
-        }
-
-        .reason-box h3 {
-            font-size: 1.25rem;
-            color: #c2185b;
-            margin-bottom: 8px;
-            font-weight: 800;
-        }
-
-        .reason-box p {
-            color: #5d3a4d;
-            font-size: 0.98rem;
-            line-height: 1.5;
-        }
-
-        .reason-box .tag {
-            align-self: flex-start;
-            margin-top: 14px;
-            font-size: 0.78rem;
-            font-weight: 800;
-            background: #fff0f5;
-            color: #e91e63;
-            padding: 3px 12px;
-            border-radius: 12px;
-            border: 1px solid #ffd1dc;
-        }
-
-        /* Deep Love Letter Section */
-        .love-letter {
-            background: #fffaf5;
-            border: 2px solid #ffd8e2;
-            border-radius: 24px;
-            padding: 40px;
-            position: relative;
-            box-shadow: inset 0 0 40px rgba(255, 182, 193, 0.12), 0 10px 30px rgba(255, 105, 180, 0.1);
-        }
-
-        .letter-stamp {
-            position: absolute;
-            top: 25px;
-            right: 25px;
-            width: 65px;
-            height: 65px;
-            border: 2px dashed #ff4081;
-            border-radius: 12px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: #ff4081;
-            font-size: 1.3rem;
-            transform: rotate(8deg);
-            background: #fff;
-        }
-
-        .stamp-txt {
-            font-size: 8px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 2px;
-        }
-
-        .love-letter h2 {
-            font-family: 'Dancing Script', cursive;
-            font-size: 2.8rem;
-            color: #b71556;
-            margin-bottom: 20px;
-        }
-
-        .love-letter p {
-            margin-bottom: 18px;
-            font-size: 1.12rem;
-            color: #442233;
-            line-height: 1.85;
-            text-align: justify;
-        }
-
-        .letter-signature {
-            font-family: 'Dancing Script', cursive;
-            font-size: 2.4rem;
-            color: #d81b60;
-            text-align: right;
-            margin-top: 25px;
-        }
-
-        /* Compliment Machine */
-        .compliment-box {
-            background: linear-gradient(135deg, #fff5f8 0%, #ffffff 100%);
-            border-radius: 22px;
-            padding: 30px;
-            text-align: center;
-            border: 2px solid #ffccd5;
-            margin-top: 15px;
-        }
-
-        .compliment-text {
-            font-size: 1.45rem;
-            font-weight: 700;
-            color: #c2185b;
-            min-height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 10px 20px;
-            transition: all 0.3s ease;
-        }
-
-        /* Love Bank / Counter */
-        .counter-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 16px;
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .counter-card {
-            background: white;
-            padding: 20px;
-            border-radius: 18px;
-            border: 1px solid #ffd1dc;
-            box-shadow: 0 4px 15px rgba(255, 182, 193, 0.2);
-        }
-
-        .counter-num {
-            font-size: 2.5rem;
-            font-weight: 900;
-            color: #ff3366;
             font-family: 'Nunito', sans-serif;
+            background-color: #FFF9F5;
+            color: #4A2C2A;
+            overflow-x: hidden;
         }
 
-        .counter-label {
-            font-size: 0.95rem;
-            color: #6b4055;
-            font-weight: 700;
+        h1, h2, h3, .font-display {
+            font-family: 'Quicksand', sans-serif;
         }
 
-        /* Jar of Secret Love Notes */
-        .jar-container {
-            text-align: center;
-            padding: 20px 10px;
+        .font-script {
+            font-family: 'Pacifico', cursive;
         }
 
-        .jar-icon-wrap {
+        /* Soft pastel gradient mesh background */
+        .pastel-bg {
+            background: 
+                radial-gradient(circle at 12% 15%, rgba(255, 214, 231, 0.75) 0%, transparent 42%),
+                radial-gradient(circle at 88% 20%, rgba(237, 228, 255, 0.8) 0%, transparent 45%),
+                radial-gradient(circle at 50% 55%, rgba(255, 243, 214, 0.7) 0%, transparent 50%),
+                radial-gradient(circle at 85% 85%, rgba(255, 228, 236, 0.8) 0%, transparent 45%),
+                #FFF9F5;
+        }
+
+        /* Floating gentle animations */
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(4deg); }
+        }
+
+        @keyframes floatReverse {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(10px) rotate(-4deg); }
+        }
+
+        @keyframes pulseHeart {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.14); }
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+
+        @keyframes drip {
+            0%, 100% { transform: scaleY(1); }
+            50% { transform: scaleY(1.18); }
+        }
+
+        .animate-float-slow {
+            animation: floatSlow 5s ease-in-out infinite;
+        }
+
+        .animate-float-reverse {
+            animation: floatReverse 6s ease-in-out infinite;
+        }
+
+        .animate-pulse-heart {
+            animation: pulseHeart 1.8s ease-in-out infinite;
+        }
+
+        .animate-drip {
+            transform-origin: top center;
+            animation: drip 3.2s ease-in-out infinite;
+        }
+
+        .shimmer-text {
+            background: linear-gradient(90deg, #E0487B 0%, #FF8FB3 30%, #9B7EDE 60%, #E0487B 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 5s linear infinite;
+        }
+
+        /* 3D Flip Card Styles */
+        .perspective-1000 {
+            perspective: 1000px;
+        }
+
+        .flip-card-inner {
             position: relative;
-            display: inline-block;
-            cursor: pointer;
-            transition: transform 0.25s ease;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transform-style: preserve-3d;
         }
 
-        .jar-icon-wrap:hover {
-            transform: scale(1.1) rotate(4deg);
+        .flip-card.flipped .flip-card-inner {
+            transform: rotateY(180deg);
         }
 
-        .jar-icon {
-            font-size: 90px;
-            color: #ff758c;
-            filter: drop-shadow(0 10px 15px rgba(255, 117, 140, 0.35));
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 1.75rem;
         }
 
-        .secret-note-popup {
-            background: #fff;
-            border: 2px solid #ff8fa3;
-            border-radius: 18px;
-            padding: 20px;
-            max-width: 500px;
-            margin: 20px auto 0;
-            box-shadow: 0 10px 25px rgba(255, 143, 163, 0.25);
-            animation: popIn 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            font-size: 1.15rem;
-            color: #7b2649;
-            font-weight: 600;
+        .flip-card-back {
+            transform: rotateY(180deg);
         }
 
-        /* Floating Click Heart Effect */
-        .burst-heart {
+        /* Particle burst styling */
+        .burst-particle {
             position: fixed;
             pointer-events: none;
             z-index: 9999;
-            animation: floatAndFade 1.2s forwards ease-out;
+            user-select: none;
+            animation: particleFly 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 30px 15px 10px;
-            color: #a0607e;
-            font-size: 0.95rem;
-            font-weight: 600;
-        }
-
-        footer span {
-            color: #ff2a6d;
-            font-size: 1.2rem;
-            display: inline-block;
-            animation: heartbeat 1.4s infinite;
-        }
-
-        /* Keyframes */
-        @keyframes heartbeat {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.25); }
-        }
-
-        @keyframes bounceSoft {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
-        }
-
-        @keyframes moveStripes {
-            0% { background-position: 0 0; }
-            100% { background-position: 40px 0; }
-        }
-
-        @keyframes floatAndFade {
+        @keyframes particleFly {
             0% {
-                transform: translate(0, 0) scale(0.6) rotate(0deg);
                 opacity: 1;
+                transform: translate(0, 0) scale(0.6) rotate(0deg);
             }
             100% {
-                transform: translate(var(--tx), var(--ty)) scale(1.4) rotate(var(--rot));
                 opacity: 0;
+                transform: translate(var(--tx), var(--ty)) scale(1.4) rotate(var(--rot));
             }
         }
 
-        @keyframes popIn {
-            0% { transform: scale(0.8); opacity: 0; }
-            100% { transform: scale(1); opacity: 1; }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FFF3F7;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #FFB3CC;
+            border-radius: 9999px;
+            border: 2px solid #FFF3F7;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #FF6B9D;
         }
 
-        /* Mobile Adjustments */
-        @media (max-width: 640px) {
-            .cute-card {
-                padding: 20px 16px;
-                border-radius: 20px;
-            }
-            .love-letter {
-                padding: 25px 16px;
-            }
-            .letter-stamp {
-                top: 15px;
-                right: 15px;
-                width: 50px;
-                height: 50px;
-            }
-            .hero {
-                padding-top: 20px;
-            }
+        /* Glass pastel card */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 2px solid rgba(255, 214, 231, 0.85);
         }
     </style>
 </head>
-<body>
+<body class="pastel-bg selection:bg-berry selection:text-white">
 
-    <!-- Background Canvas for Falling Hearts & Sparkles -->
-    <canvas id="bgCanvas"></canvas>
+    <!-- Background Ambient Floating Sparkles & Hearts Canvas -->
+    <div id="ambient-layer" class="fixed inset-0 pointer-events-none overflow-hidden z-0"></div>
 
-    <!-- Floating Action Buttons -->
-    <div class="floating-controls">
-        <button class="floating-btn" id="soundToggle" title="Toggle Cute Sounds">
-            <i class="fas fa-volume-up"></i>
-        </button>
-        <button class="floating-btn" id="showerToggle" title="Heart Shower Explosion!">
-            <i class="fas fa-heart"></i>
-        </button>
-    </div>
+    <!-- Sticky Cute Top Navigation Bar -->
+    <header class="sticky top-3 z-40 px-4 max-w-6xl mx-auto">
+        <nav class="glass-card rounded-full px-4 py-2.5 shadow-cute flex items-center justify-between gap-2 overflow-x-auto no-scrollbar">
+            <a href="#top" class="flex items-center gap-2 shrink-0 pl-1 group">
+                <span class="text-2xl animate-pulse-heart">🧁</span>
+                <span class="font-script text-xl text-berryDark group-hover:text-berry transition">Iffah's World</span>
+            </a>
 
-    <div class="main-container">
+            <div class="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-bold text-cocoa shrink-0">
+                <a href="#cuteness-meter" class="px-3 py-1.5 rounded-full bg-blush/70 hover:bg-berry hover:text-white transition">💖 Cuteness Meter</a>
+                <a href="#lava-bakery" class="px-3 py-1.5 rounded-full bg-vanilla hover:bg-cocoa hover:text-white transition">🍫 Lava Cake Bakery</a>
+                <a href="#love-letters" class="px-3 py-1.5 rounded-full bg-lavender/80 hover:bg-lavenderDeep hover:text-white transition">💌 Story Letters</a>
+                <a href="#hugs-station" class="px-3 py-1.5 rounded-full bg-blush/70 hover:bg-berry hover:text-white transition">🧸 Send Hugs</a>
+                <a href="#open-when" class="px-3 py-1.5 rounded-full bg-vanilla hover:bg-berry hover:text-white transition">✨ Flip Cards</a>
+                <a href="#scrapbook" class="px-3 py-1.5 rounded-full bg-lavender/80 hover:bg-lavenderDeep hover:text-white transition">📸 Scrapbook</a>
+            </div>
+        </nav>
+    </header>
 
-        <!-- HERO SECTION -->
-        <header class="hero">
-            <div class="heart-crown">👑 💖 🌸</div>
-            <h1>To My Dearest Jaspreet</h1>
-            <p class="hero-tagline">
-                The sweetest soul, the most mesmerizing smile, and unconditionally the cutest, prettiest girl in the entire universe.
-            </p>
+    <main id="top" class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-8 pb-24 space-y-20">
 
-            <div class="sparkle-badge-row">
-                <span class="badge-pill" onclick="triggerCuteChime(); spawnFloatingText(event, 'World\'s Cutest! ✨')">✨ Exceptionally Gorgeous</span>
-                <span class="badge-pill" onclick="triggerCuteChime(); spawnFloatingText(event, 'My Favorite Smile 😊')">🌸 Sweetest Laugh Ever</span>
-                <span class="badge-pill" onclick="triggerCuteChime(); spawnFloatingText(event, 'Pure Sunshine ☀️')">💫 100% Pure Magic</span>
-                <span class="badge-pill" onclick="triggerCuteChime(); spawnFloatingText(event, 'My Whole World 🌍')">💖 Forever & Always</span>
+        <!-- =========================================================
+             1. HERO SECTION: GRAND WELCOME BANNER FOR IFFAH
+        ========================================================== -->
+        <section class="relative rounded-[2.5rem] glass-card p-7 sm:p-12 md:p-16 shadow-cute-lg overflow-hidden text-center">
+            <!-- Decorative corner stickers -->
+            <div class="hidden sm:flex absolute top-6 left-8 text-4xl animate-float-slow select-none">🌸</div>
+            <div class="hidden sm:flex absolute top-8 right-10 text-4xl animate-float-reverse select-none">🍰</div>
+            <div class="hidden sm:flex absolute bottom-8 left-12 text-4xl animate-float-reverse select-none">🎀</div>
+            <div class="hidden sm:flex absolute bottom-6 right-10 text-4xl animate-float-slow select-none">✨</div>
+
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blush text-berryDark font-extrabold text-xs sm:text-sm tracking-wide uppercase mb-5 shadow-sm">
+                <span>🍓 Official Appreciation Shrine</span>
+                <span>•</span>
+                <span>1000% Certified Adorable</span>
             </div>
 
-            <!-- Cute Love Meter Card -->
-            <div class="meter-container">
-                <div class="card-header-icon"><i class="fas fa-tachometer-alt"></i></div>
-                <div class="meter-status" id="meterText">Jaspreet Cuteness Rating: 1,000,000% (CRITICAL OVERLOAD!)</div>
-                <div class="meter-bar-outer">
-                    <div class="meter-bar-inner" id="loveFill" style="width: 95%;"></div>
-                </div>
-                <button class="btn-cute" id="overloadBtn">
-                    <i class="fas fa-sparkles"></i> Click to Overload Her Cuteness!
+            <h1 class="font-script text-4xl sm:text-6xl md:text-7xl leading-tight mb-4 shimmer-text drop-shadow-sm">
+                Iffah, You Are So Unbelievably Cute!
+            </h1>
+
+            <p class="font-display text-lg sm:text-2xl font-bold text-cocoaLight max-w-3xl mx-auto mb-6">
+                Sweeter than warm molten chocolate lava cake, softer than a pastel cloud, and brighter than a sky full of shooting stars. ✨
+            </p>
+
+            <!-- Rich multi-sentence intro paragraph -->
+            <div class="max-w-3xl mx-auto bg-white/80 rounded-3xl p-6 sm:p-8 border-2 border-blush text-left sm:text-center space-y-4 shadow-sm mb-8">
+                <p class="text-base sm:text-lg leading-relaxed text-cocoa font-medium">
+                    Welcome to a whole corner of the internet built exclusively to celebrate <strong class="text-berryDark font-extrabold">Iffah</strong>! Honestly, it is almost unfair how effortlessly cute you are. From the way your smile instantly lights up an entire room to the cozy, gentle energy you bring wherever you go, you make ordinary days feel like a celebration.
+                </p>
+                <p class="text-base sm:text-lg leading-relaxed text-cocoa font-medium">
+                    Whether you are laughing at something silly, getting excited over your absolute favorite treat—rich, gooey <strong class="text-cocoa font-extrabold underline decoration-caramel decoration-4">molten chocolate lava cake</strong>—or simply being your wonderful self, you deserve to be reminded every single second just how cherished, adorable, and special you truly are.
+                </p>
+            </div>
+
+            <!-- Quick-Jump Action Pills -->
+            <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+                <button onclick="triggerHeroCelebration(event)" class="px-7 py-4 rounded-full bg-gradient-to-r from-berry to-berryDark text-white font-extrabold text-base sm:text-lg shadow-cute hover:scale-105 active:scale-95 transition cursor-pointer flex items-center gap-2">
+                    <span>💖 Shower Iffah With Sparkles</span>
                 </button>
-            </div>
-        </header>
-
-        <!-- REASONS WHY JASPREET IS SO CUTE -->
-        <section class="cute-card">
-            <div class="card-header-icon"><i class="fas fa-magic"></i></div>
-            <h2 class="section-title">Why Jaspreet Is Irresistibly Cute</h2>
-            <p class="section-sub">Tap on any card to unlock a sweet secret thought about why you are so adored!</p>
-
-            <div class="reasons-grid">
-                <div class="reason-box" onclick="flipCardDetail(this, 'Every single time you smile, whatever is stressing me out melts into nothing. It glows brighter than morning sunshine.')">
-                    <div class="icon">✨</div>
-                    <h3>That Radiant Smile</h3>
-                    <p>It isn't just pretty—it has this genuine, heartwarming sparkle that makes the whole world feel peaceful.</p>
-                    <span class="tag">Tap to reveal secret 💌</span>
-                </div>
-
-                <div class="reason-box" onclick="flipCardDetail(this, 'I could listen to your laughter on repeat forever. It is genuinely the sweetest music in existence.')">
-                    <div class="icon">🎀</div>
-                    <h3>Your Precious Laugh</h3>
-                    <p>The soft, bubbly giggle you do when you are truly happy makes my heart do backflips every time.</p>
-                    <span class="tag">Tap to reveal secret 💌</span>
-                </div>
-
-                <div class="reason-box" onclick="flipCardDetail(this, 'Even when you think you are looking serious or angry, you just look like an adorable kitten trying to be fierce!')">
-                    <div class="icon">🥺</div>
-                    <h3>Your Adorable Pout</h3>
-                    <p>When you're mock-annoyed or focusing intently, you make the cutest face imaginable. Unfairly charming!</p>
-                    <span class="tag">Tap to reveal secret 💌</span>
-                </div>
-
-                <div class="reason-box" onclick="flipCardDetail(this, 'Your kind heart is the rarest treasure. You care with such genuine sweetness and depth.')">
-                    <div class="icon">🧸</div>
-                    <h3>Warm & Caring Soul</h3>
-                    <p>You have this gentle, warm aura where anyone around you instantly feels comforted, understood, and safe.</p>
-                    <span class="tag">Tap to reveal secret 💌</span>
-                </div>
-
-                <div class="reason-box" onclick="flipCardDetail(this, 'You look breathtaking in fancy dresses and somehow even cuter in cozy oversized hoodies and messy hair.')">
-                    <div class="icon">🌷</div>
-                    <h3>Effortlessly Beautiful</h3>
-                    <p>You don't even have to try. Natural elegance, sweet sparkling eyes, and the softest charm.</p>
-                    <span class="tag">Tap to reveal secret 💌</span>
-                </div>
-
-                <div class="reason-box" onclick="flipCardDetail(this, 'You are my safe haven, my happiest notification, and the sweetest part of every single day.')">
-                    <div class="icon">🍓</div>
-                    <h3>My Favorite Human</h3>
-                    <p>Out of billions of people on this planet, nobody could ever come close to making me feel this loved.</p>
-                    <span class="tag">Tap to reveal secret 💌</span>
-                </div>
+                <a href="#lava-bakery" class="px-7 py-4 rounded-full bg-cocoa text-cream font-extrabold text-base sm:text-lg shadow-cocoa hover:bg-fudge hover:scale-105 active:scale-95 transition flex items-center gap-2">
+                    <span>🍫 Bake Her Fav Lava Cake</span>
+                </a>
+                <a href="#love-letters" class="px-7 py-4 rounded-full bg-lavender text-cocoa font-extrabold text-base sm:text-lg border-2 border-lavenderDeep/30 hover:scale-105 active:scale-95 transition flex items-center gap-2">
+                    <span>📖 Read Sweet Paragraphs</span>
+                </a>
             </div>
         </section>
 
-        <!-- LONG HEARTFELT LOVE LETTER -->
-        <section class="love-letter cute-card">
-            <div class="letter-stamp">
-                <i class="fas fa-heart"></i>
-                <span class="stamp-txt">FOR YOU</span>
-            </div>
-            <h2>My Heartfelt Words For Jaspreet 💌</h2>
+        <!-- =========================================================
+             2. CUTENESS OVERLOAD METER & COMPLIMENT DISPENSER
+        ========================================================== -->
+        <section id="cuteness-meter" class="scroll-mt-24 grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+            
+            <!-- Left Panel: Cuteness Overload Meter -->
+            <div class="lg:col-span-6 glass-card rounded-[2.25rem] p-7 sm:p-9 shadow-cute flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between gap-2 mb-3">
+                        <span class="px-3.5 py-1 rounded-full bg-blush text-berryDark text-xs font-extrabold uppercase tracking-wider">Scientific Measurement</span>
+                        <span id="meter-badge" class="px-3.5 py-1 rounded-full bg-vanilla text-cocoa text-xs font-extrabold">Level: Super Cute 🌸</span>
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-cocoa mb-2">
+                        Iffah's Cuteness Overload Meter 🌡️💖
+                    </h2>
+                    <p class="text-cocoaLight text-sm sm:text-base mb-6">
+                        Warning: Our sensors were not designed to handle Iffah's level of adorableness. Keep tapping the button below to test the limits!
+                    </p>
 
-            <p>
-                My dearest Jaspreet, if I sat down with an endless sea of ink and parchment, I still would never run out of sweet things to say about you. From the quiet morning hours to the moments late at night when the rest of the world has fallen asleep, you are constantly the sweetest thought dancing across my mind. You carry a light inside you that is so pure, so vibrant, and so soft that being loved by you feels like stepping into warm sunlight after a cold winter rain.
-            </p>
-
-            <p>
-                People often talk about beauty as if it’s merely something you see with your eyes, but with you, Jaspreet, beauty is an entire experience. It’s in the effortless grace of your laughter, the kindness in how you listen, the playful glint in your eyes when you tease me, and the comforting gentleness you bring into every conversation. You have this magical ability to turn completely ordinary days into something unforgettable just by being in them. Every little story you share, every expression you make, and every gentle gesture makes me fall in love with you all over again.
-            </p>
-
-            <p>
-                I want you to always remember how deeply cherished you are. On the days when you feel tired, on the days when self-doubt whispers, or whenever you wonder if you are enough—please look at yourself through my eyes. You will see someone extraordinarily capable, immensely loving, impossibly cute, and completely irreplaceable. You are my favorite hello, my hardest goodbye, and the dream I never want to wake up from. Thank you for being your wonderful, silly, sweet, breathtaking self. I love you more than words will ever have the power to say.
-            </p>
-
-            <div class="letter-signature">
-                Forever completely head-over-heels for you,<br>
-                Yours Always & Completely 💖
-            </div>
-        </section>
-
-        <!-- COMPLIMENT GENERATOR -->
-        <section class="cute-card">
-            <div class="card-header-icon"><i class="fas fa-gift"></i></div>
-            <h2 class="section-title">Jaspreet's Instant Smile Machine</h2>
-            <p class="section-sub">Whenever you need a reminder of how gorgeous you are, just tap below!</p>
-
-            <div class="compliment-box">
-                <div class="compliment-text" id="complimentText">
-                    "Jaspreet, your smile literally makes flowers jealous of your bloom. 🌸"
-                </div>
-                <button class="btn-cute" id="newComplimentBtn">
-                    <i class="fas fa-wand-magic-sparkles"></i> Tap for Another Reason You're Pretty!
-                </button>
-            </div>
-        </section>
-
-        <!-- INTERACTIVE HUG & KISS COUNTER -->
-        <section class="cute-card">
-            <div class="card-header-icon"><i class="fas fa-hand-holding-heart"></i></div>
-            <h2 class="section-title">Virtual Hugs & Kisses Bank</h2>
-            <p class="section-sub">Shower Jaspreet with infinite affection! Every click sends real digital hugs and love your way.</p>
-
-            <div style="text-align: center; margin-bottom: 25px;">
-                <button class="btn-cute" id="sendHugBtn" style="font-size: 1.25rem; padding: 16px 36px;">
-                    <i class="fas fa-kiss-wink-heart"></i> Send Sweet Hugs to Jaspreet! 💕
-                </button>
-            </div>
-
-            <div class="counter-grid">
-                <div class="counter-card">
-                    <div class="counter-num" id="hugCount">1,337</div>
-                    <div class="counter-label">Hugs & Cuddles Sent</div>
-                </div>
-                <div class="counter-card">
-                    <div class="counter-num" id="kissCount">999</div>
-                    <div class="counter-label">Forehead Kisses Planted</div>
-                </div>
-                <div class="counter-card">
-                    <div class="counter-num" id="smileCount">∞</div>
-                    <div class="counter-label">Smiles Jaspreet Inspired</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECRET LOVE NOTES JAR -->
-        <section class="cute-card">
-            <div class="card-header-icon"><i class="fas fa-candy-cane"></i></div>
-            <h2 class="section-title">The Secret Love Jar</h2>
-            <p class="section-sub">Click the magical jar to open a folded secret note written just for Jaspreet.</p>
-
-            <div class="jar-container">
-                <div class="jar-icon-wrap" id="jarButton" title="Tap to open a cute note!">
-                    <i class="fas fa-jar jar-icon"></i>
-                    <div style="font-size: 2.2rem; position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%);">
-                        💌
+                    <!-- Visual Meter Bar -->
+                    <div class="bg-blush/60 rounded-3xl p-5 border-2 border-pink-200 mb-6">
+                        <div class="flex justify-between items-end mb-2">
+                            <span class="font-bold text-sm text-cocoaLight">Current Reading:</span>
+                            <span id="cuteness-percent" class="font-script text-3xl sm:text-4xl text-berryDark">100%</span>
+                        </div>
+                        <div class="w-full h-7 bg-white rounded-full overflow-hidden p-1 border border-pink-200 shadow-inner">
+                            <div id="cuteness-bar" class="h-full rounded-full bg-gradient-to-r from-pink-400 via-berry to-purple-500 transition-all duration-500 flex items-center justify-end pr-2 text-xs text-white font-bold" style="width: 45%;">
+                                ✨
+                            </div>
+                        </div>
+                        <p id="meter-status-text" class="mt-3 text-sm font-bold text-cocoa text-center bg-white/80 py-2.5 px-4 rounded-2xl">
+                            "Baseline reading already exceeds normal human cuteness standards!"
+                        </p>
                     </div>
                 </div>
 
-                <div id="secretNoteArea" style="min-height: 90px; margin-top: 15px;">
-                    <div class="secret-note-popup" id="secretNoteText">
-                        ✨ Tap the jar above to fish out a secret sweet note! ✨
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <button id="boost-cuteness-btn" onclick="boostCuteness(event)" class="flex-1 py-4 px-6 rounded-2xl bg-gradient-to-r from-berry to-pink-500 text-white font-extrabold text-base sm:text-lg shadow-cute hover:brightness-105 active:scale-95 transition cursor-pointer">
+                        ⚡ Measure More Cuteness!
+                    </button>
+                    <button onclick="resetCuteness()" class="py-4 px-5 rounded-2xl bg-blush/80 text-berryDark font-bold text-sm hover:bg-blush transition cursor-pointer">
+                        Reset 🔄
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Panel: Interactive Compliment & Sweet Note Machine -->
+            <div class="lg:col-span-6 glass-card rounded-[2.25rem] p-7 sm:p-9 shadow-cute flex flex-col justify-between bg-gradient-to-br from-white/90 to-lavender/40">
+                <div>
+                    <div class="flex items-center justify-between gap-2 mb-3">
+                        <span class="px-3.5 py-1 rounded-full bg-lavender text-lavenderDeep text-xs font-extrabold uppercase tracking-wider">Sweet Note Dispenser</span>
+                        <span id="compliment-counter" class="text-xs font-bold text-cocoaLight">Note #1 of 18</span>
                     </div>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-cocoa mb-2">
+                        Why Iffah Is Pure Magic ✨💌
+                    </h2>
+                    <p class="text-cocoaLight text-sm sm:text-base mb-6">
+                        Press the magic gumball button to pull out another reason why everyone adores you so much!
+                    </p>
+
+                    <!-- Compliment Card Display -->
+                    <div id="compliment-card" class="relative bg-white rounded-3xl p-6 sm:p-7 border-2 border-lavenderDeep/30 shadow-sm min-h-[190px] flex flex-col justify-center items-center text-center transition-all duration-300">
+                        <div id="compliment-emoji" class="text-4xl mb-3 animate-float-slow">🌷</div>
+                        <p id="compliment-text" class="text-base sm:text-lg font-bold text-cocoa leading-relaxed">
+                            "Iffah has the kind of smile that makes bad days immediately pack their bags and leave. You are genuinely sunshine in human form!"
+                        </p>
+                        <span id="compliment-tag" class="mt-4 inline-block px-3 py-1 rounded-full bg-blush/70 text-berryDark text-xs font-extrabold">
+                            #EffortlesslyAdorable
+                        </span>
+                    </div>
+                </div>
+
+                <div class="mt-6">
+                    <button onclick="nextCompliment(event)" class="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-lavenderDeep to-purple-500 text-white font-extrabold text-base sm:text-lg shadow-cute hover:brightness-105 active:scale-95 transition cursor-pointer flex items-center justify-center gap-2">
+                        <span>🎲 Dispense Another Cute Truth</span>
+                    </button>
                 </div>
             </div>
         </section>
 
-        <footer>
-            Handcrafted with infinite love, starry sparkles, and sweet cuddles for <strong>Jaspreet</strong>.<br>
-            You are my happily ever after <span>💖</span>
-        </footer>
+        <!-- =========================================================
+             3. SWEET TREATS & LAVA CAKE INTERACTIVE BAKERY PANEL
+        ========================================================== -->
+        <section id="lava-bakery" class="scroll-mt-24 rounded-[2.5rem] bg-gradient-to-br from-[#FFF3E8] via-[#FFE9DC] to-[#FDE2E4] border-2 border-caramel/50 p-7 sm:p-12 shadow-cocoa">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cocoa text-cream text-xs sm:text-sm font-extrabold uppercase tracking-wider mb-3">
+                    🍫 Iffah's #1 Favorite Dessert • Molten Lava Cake Edition
+                </span>
+                <h2 class="font-script text-3xl sm:text-5xl text-cocoa mb-3">
+                    Iffah's Cozy Molten Lava Cake Bakery
+                </h2>
+                <p class="text-cocoaLight text-base sm:text-lg font-semibold">
+                    Because we all know the fastest way to make Iffah's eyes sparkle is a warm, rich, gooey chocolate lava cake! Customize and bake a fresh batch right here.
+                </p>
+            </div>
 
-    </div>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <!-- Interactive Lava Cake Builder Visual (Left 5 Cols) -->
+                <div class="lg:col-span-5 bg-white/90 rounded-[2rem] p-6 sm:p-8 border-2 border-caramel/40 shadow-md text-center flex flex-col items-center">
+                    <div class="text-xs font-extrabold uppercase tracking-widest text-cocoaLight mb-2">
+                        Fresh From the Oven • Made For Iffah
+                    </div>
 
-    <!-- SCRIPT LOGIC -->
-    <script>
-        // Web Audio API for cute gentle chimes
-        let audioCtx = null;
-        let soundEnabled = true;
-
-        function initAudio() {
-            if (!audioCtx) {
-                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-            }
-        }
-
-        function playCuteChime(freq = 587.33) { // D5 default
-            if (!soundEnabled) return;
-            try {
-                initAudio();
-                if (audioCtx.state === 'suspended') {
-                    audioCtx.resume();
-                }
-                const osc = audioCtx.createOscillator();
-                const gain = audioCtx.createGain();
-
-                osc.type = 'sine';
-                // Cute frequency flutter
-                osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
-                osc.frequency.exponentialRampToValueAtTime(freq * 1.5, audioCtx.currentTime + 0.15);
-
-                gain.gain.setValueAtTime(0.12, audioCtx.currentTime);
-                gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.35);
-
-                osc.connect(gain);
-                gain.connect(audioCtx.destination);
-
-                osc.start();
-                osc.stop(audioCtx.currentTime + 0.36);
-            } catch (e) {
-                // Audio might be blocked until user gesture
-            }
-        }
-
-        function playSuccessMelody() {
-            if (!soundEnabled) return;
-            const notes = [523.25, 659.25, 783.99, 1046.50]; // C E G C
-            notes.forEach((freq, idx) => {
-                setTimeout(() => playCuteChime(freq), idx * 90);
-            });
-        }
-
-        // Compliments List
-        const compliments = [
-            "Jaspreet, your smile literally makes flowers jealous of your bloom. 🌸",
-            "Are you made of stardust and sugar? Because you are overwhelmingly sweet! ✨",
-            "Science has proven: looking at Jaspreet reduces stress by 999%! 🧸",
-            "You have the cutest little expressions in the whole universe. 🥺",
-            "If cuteness was a crime, Jaspreet would be serving multiple life sentences! 🚨💖",
-            "You are the most comfortable warmth in the chilly world. ☕💕",
-            "Even poetry struggles to describe how breathtaking you look every single day. 📖✨",
-            "The way your eyes crinkle when you laugh is my absolute favorite sight in existence. 🌟",
-            "Jaspreet: Defined in the dictionary as 'Pure Adorableness & Kindness'. 🌷",
-            "I could look at you for hours and still discover new reasons to be amazed. 💫"
-        ];
-
-        // Secret Jar Notes
-        const secretNotes = [
-            "💌 'Psst... Jaspreet! Remember to drink water today and remember how dearly loved you are!'",
-            "💌 'Secret note #42: You looked unfairly gorgeous today. Yes, you did, don't argue!'",
-            "💌 'Every single love song makes complete sense whenever you are around.'",
-            "💌 'You are officially granted 1,000,000 unconditional forehead kisses and warm cuddles.'",
-            "💌 'If I had three wishes, every single one would be spent on making you smile.'",
-            "💌 'Thank you for existing, Jaspreet. You make the world a hundred times prettier.'"
-        ];
-
-        // Background Canvas Particles (Hearts & Sparkles)
-        const canvas = document.getElementById('bgCanvas');
-        const ctx = canvas.getContext('2d');
-        let width = canvas.width = window.innerWidth;
-        let height = canvas.height = window.innerHeight;
-
-        window.addEventListener('resize', () => {
-            width = canvas.width = window.innerWidth;
-            height = canvas.height = window.innerHeight;
-        });
-
-        class Particle {
-            constructor() {
-                this.reset();
-            }
-            reset() {
-                this.x = Math.random() * width;
-                this.y = height + Math.random() * 50;
-                this.size = Math.random() * 14 + 10;
-                this.speedY = Math.random() * 1.2 + 0.6;
-                this.speedX = (Math.random() - 0.5) * 0.8;
-                this.opacity = Math.random() * 0.45 + 0.25;
-                this.char = ['💖', '🌸', '✨', '💕', '🌷'][Math.floor(Math.random() * 5)];
-                this.rotation = Math.random() * Math.PI;
-                this.rotSpeed = (Math.random() - 0.5) * 0.02;
-            }
-            update() {
-                this.y -= this.speedY;
-                this.x += this.speedX;
-                this.rotation += this.rotSpeed;
-                if (this.y < -30) {
-                    this.reset();
-                }
-            }
-            draw() {
-                ctx.save();
-                ctx.translate(this.x, this.y);
-                ctx.rotate(this.rotation);
-                ctx.globalAlpha = this.opacity;
-                ctx.font = `${this.size}px serif`;
-                ctx.fillText(this.char, 0, 0);
-                ctx.restore();
-            }
-        }
-
-        const particles = Array.from({ length: 32 }, () => new Particle());
-
-        function animate() {
-            ctx.clearRect(0, 0, width, height);
-            particles.forEach(p => {
-                p.update();
-                p.draw();
-            });
-            requestAnimationFrame(animate);
-        }
-        animate();
-
-        // Sound Toggle
-        const soundToggle = document.getElementById('soundToggle');
-        soundToggle.addEventListener('click', () => {
-            soundEnabled = !soundEnabled;
-            soundToggle.innerHTML = soundEnabled ? '<i class="fas fa-volume-up"></i>' : '<i class="fas fa-volume-mute"></i>';
-            if (soundEnabled) playCuteChime(700);
-        });
-
-        // Heart Shower Trigger
-        const showerToggle = document.getElementById('showerToggle');
-        showerToggle.addEventListener('click', (e) => {
-            fireConfettiBurst();
-            playSuccessMelody();
-            spawnFloatingText(e, "Shower of Love! 💖");
-        });
-
-        function fireConfettiBurst() {
-            if (typeof confetti === 'function') {
-                confetti({
-                    particleCount: 70,
-                    spread: 80,
-                    origin: { y: 0.6 },
-                    colors: ['#ff4081', '#ff80ab', '#ffb3c6', '#ffd54f', '#ea80fc']
-                });
-            }
-        }
-
-        // Cuteness Overload Button
-        const overloadBtn = document.getElementById('overloadBtn');
-        const loveFill = document.getElementById('loveFill');
-        const meterText = document.getElementById('meterText');
-        let overloadCount = 1000000;
-
-        overloadBtn.addEventListener('click', (e) => {
-            playSuccessMelody();
-            overloadCount += 250000;
-            meterText.innerText = `Jaspreet Cuteness Rating: ${overloadCount.toLocaleString()}% (SYSTEM CRITICAL! 🚨)`;
-            loveFill.style.width = '100%';
-            loveFill.style.filter = 'hue-rotate(20deg) brightness(1.15)';
-            fireConfettiBurst();
-            spawnFloatingText(e, "CUTENESS MAXED OUT! 💥🥰");
-        });
-
-        // Reason Card interaction
-        function flipCardDetail(card, customMsg) {
-            playCuteChime(650);
-            const p = card.querySelector('p');
-            const originalText = p.getAttribute('data-original') || p.innerText;
-            if (!p.getAttribute('data-original')) {
-                p.setAttribute('data-original', originalText);
-            }
-
-            if (p.innerText === customMsg) {
-                p.innerText = p.getAttribute('data-original');
-                card.style.background = 'white';
-            } else {
-                p.innerText = customMsg;
-                card.style.background = '#fff5f8';
-            }
-            fireMiniHearts(card);
-        }
-
-        function fireMiniHearts(element) {
-            const rect = element.getBoundingClientRect();
-            for (let i = 0; i < 4; i++) {
-                createBurstHeart(rect.left + rect.width / 2 + (Math.random() - 0.5) * 60, rect.top + rect.height / 2);
-            }
-        }
-
-        // Compliment generator
-        const complimentBtn = document.getElementById('newComplimentBtn');
-        const complimentTxt = document.getElementById('complimentText');
-        complimentBtn.addEventListener('click', (e) => {
-            playCuteChime(784);
-            const randomIndex = Math.floor(Math.random() * compliments.length);
-            complimentTxt.style.opacity = '0';
-            setTimeout(() => {
-                complimentTxt.innerText = compliments[randomIndex];
-                complimentTxt.style.opacity = '1';
-            }, 180);
-            createBurstHeart(e.clientX, e.clientY);
-        });
-
-        // Hug and Kiss Counter
-        const sendHugBtn = document.getElementById('sendHugBtn');
-        const hugCountEl = document.getElementById('hugCount');
-        const kissCountEl = document.getElementById('kissCount');
-        let hugs = 1337;
-        let kisses = 999;
-
-        sendHugBtn.addEventListener('click', (e) => {
-            hugs += 1;
-            kisses += 2;
-            hugCountEl.innerText = hugs.toLocaleString();
-            kissCountEl.innerText = kisses.toLocaleString();
-            playCuteChime(880);
-            spawnFloatingText(e, '+1 Huge Warm Hug! 🫂');
-            for (let i = 0; i < 5; i++) {
-                setTimeout(() => {
-                    createBurstHeart(e.clientX + (Math.random() - 0.5) * 80, e.clientY + (Math.random() - 0.5) * 60);
-                }, i * 60);
-            }
-        });
-
-        // Secret Jar
-        const jarBtn = document.getElementById('jarButton');
-        const secretNoteTxt = document.getElementById('secretNoteText');
-        jarBtn.addEventListener('click', (e) => {
-            playCuteChime(950);
-            const randNote = secretNotes[Math.floor(Math.random() * secretNotes.length)];
-            secretNoteTxt.style.transform = 'scale(0.85)';
-            setTimeout(() => {
-                secretNoteTxt.innerText = randNote;
-                secretNoteTxt.style.transform = 'scale(1)';
-            }, 150);
-            createBurstHeart(e.clientX, e.clientY);
-            fireConfettiBurst();
-        });
-
-        // Floating Hearts upon tap/click anywhere
-        document.addEventListener('click', (e) => {
-            // Ignore if clicked on buttons to prevent visual clash
-            if (e.target.closest('button') || e.target.closest('.reason-box') || e.target.closest('.jar-icon-wrap')) {
-                return;
-            }
-            createBurstHeart(e.clientX, e.clientY);
-            playCuteChime(520);
-        });
-
-        function createBurstHeart(x, y) {
-            const heart = document.createElement('div');
-            heart.className = 'burst-heart';
-            const icons = ['💖', '💕', '🌸', '✨', '💗', '🍓', '🥰'];
-            heart.innerText = icons[Math.floor(Math.random() * icons.length)];
-            heart.style.left = `${x - 12}px`;
-            heart.style.top = `${y - 12}px`;
-
-            const tx = (Math.random() - 0.5) * 140;
-            const ty = -(Math.random() * 90 + 40);
-            const rot = (Math.random() - 0.5) * 90;
-
-            heart.style.setProperty('--tx', `${tx}px`);
-            heart.style.setProperty('--ty', `${ty}px`);
-            heart.style.setProperty('--rot', `${rot}deg`);
-            heart.style.fontSize = `${Math.random() * 12 + 18}px`;
-
-            document.body.appendChild(heart);
-
-            setTimeout(() => {
-                heart.remove();
-            }, 1200);
-        }
-
-        function spawnFloatingText(e, text) {
-            const span = document.createElement('div');
-            span.className = 'burst-heart';
-            span.style.fontFamily = "'Quicksand', sans-serif";
-            span.style.fontWeight = '800';
-            span.style.color = '#e91e63';
-            span.style.textShadow = '0 2px 8px rgba(255,255,255,0.8)';
-            span.style.fontSize = '1.1rem';
-            span.innerText = text;
-
-            const x = e.clientX || window.innerWidth / 2;
-            const y = e.clientY || window.innerHeight / 2;
-
-            span.style.left = `${x - 40}px`;
-            span.style.top = `${y - 20}px`;
-            span.style.setProperty('--tx', '0px');
-            span.style.setProperty('--ty', '-70px');
-            span.style.setProperty('--rot', '0deg');
-
-            document.body.appendChild(span);
-            setTimeout(() => span.remove(), 1200);
-        }
-
-        function triggerCuteChime() {
-            playCuteChime(740);
-        }
-    </script>
-</body>
-</html>
+                    <!-- Custom SVG Interactive Lava Cake Illustration -->
+                    <div class="relative w-64 h-56 fle
